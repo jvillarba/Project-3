@@ -1,3 +1,4 @@
+![Image](https://s3.amazonaws.com/static-assets.generalassemb.ly/logos/generalassembly-open-graph.png)
 # GIFT ROULETTE
 ## WDI_SM_21 Project Three
 
@@ -36,8 +37,8 @@ Instructions to deploy:
 - Stripe?
 
 ### Credits:
-- ![Image](https://en.wikipedia.org/wiki/Amazon.com#/media/File:Amazon.com-Logo.svg)Amazon API
-- ![Image](https://en.wikipedia.org/wiki/Heroku#/media/File:Heroku_logo.png)Heroku
-- ![Image](https://en.wikipedia.org/wiki/Facebook#/media/File:Facebook_New_Logo_(2015).svg)Facebook OAuth
-- ![Image](https://en.wikipedia.org/wiki/Instagram#/media/File:Instagram_logo.png) Instagram OAuth?
+- ![Image](https://upload.wikimedia.org/wikipedia/commons/6/62/Amazon.com-Logo.svg)Amazon API
+- ![Image](https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png)Heroku
+- ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
+- ![Image](https://upload.wikimedia.org/wikipedia/en/2/28/Instagram_logo.png)Instagram OAuth?
 - ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
