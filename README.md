@@ -19,6 +19,7 @@ Instructions to deploy:
 - jQuery
 - Materialize
 - AJAX?
+- Stripe?
 
 ### Credits:
 - Amazon API
