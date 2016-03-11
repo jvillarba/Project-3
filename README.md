@@ -32,6 +32,8 @@ Nathan Castor |	nathancastor@gmail.com |	@ncastor |	nathan-castor
 #### User Stories:
 As a consumer, I want to be able to purchase a gift online and have it delivered without a lot of fuss.
 
+As a shopper, I want to be able to purchase a gift and be surprised by what I receive.
+
 
 #### Future Implementation:
 - Ability to select purchase price
