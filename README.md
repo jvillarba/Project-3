@@ -1,4 +1,4 @@
-![Image](https://s3.amazonaws.com/static-assets.generalassemb.ly/logos/generalassembly-open-graph.png)
+![Image](http://z09ob3oehl727ogck40ggahz.wpengine.netdna-cdn.com/wp-content/uploads/2015/05/GeneralAssembly_logo2.png)
 # GIFT ROULETTE
 ## WDI_SM_21 Project Three
 
