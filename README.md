@@ -1,7 +1,7 @@
 # GIFT ROULETTE
 ## WDI_SM_21 Project Three
 
-> ** Our website will make shopping fun and easy with an element of surprise **
+> *Our website will make shopping fun and easy with an element of surprise*
 
 Instructions to deploy:
 
@@ -20,7 +20,7 @@ Instructions to deploy:
 - Materialize
 - AJAX?
 
-### Credits
+### Credits:
 - Amazon API
 - Heroku
 - Facebook OAuth
