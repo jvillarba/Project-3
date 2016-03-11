@@ -1,7 +1,7 @@
 # GIFT ROULETTE
 ## WDI_SM_21 Project Three
 
-> Our website will make shopping fun and easy with an element of surprise 
+> ** Our website will make shopping fun and easy with an element of surprise **
 
 Instructions to deploy:
 
@@ -13,7 +13,7 @@ Instructions to deploy:
 
 
 ### Technologies / Framework:
-- M(ongo) E(xpress) N(ode)
+- `M`ongo  `E`xpress  `N`ode
 - HTML / CSS
 - Javascript
 - jQuery
@@ -22,3 +22,6 @@ Instructions to deploy:
 
 ### Credits
 - Amazon API
+- Heroku
+- Facebook OAuth
+- Instagram OAuth
