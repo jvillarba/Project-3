@@ -40,4 +40,4 @@ Instructions to deploy:
 - ![Image](https://en.wikipedia.org/wiki/Heroku#/media/File:Heroku_logo.png)Heroku
 - ![Image](https://en.wikipedia.org/wiki/Facebook#/media/File:Facebook_New_Logo_(2015).svg)Facebook OAuth
 - ![Image](https://en.wikipedia.org/wiki/Instagram#/media/File:Instagram_logo.png) Instagram OAuth?
-- ![Image](https://en.wikipedia.org/wiki/Trello#/media/File:Trello_Logo.png) Trello [link](https://trello.com/b/qqCaEBEb)
+- ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
