@@ -14,11 +14,11 @@ Nathan Castor |	nathancastor@gmail.com |	@ncastor |	nathan-castor
 
 **ROLES:**
 
-  Scrum Master: **Joe** [User model, Authentication, Login, Profile, main, Heroku, GitHub]
+  Scrum Master: **Joe** [User model, Authentication, Login, Profile, GitHub, Heroku]
 
   API Lead: **Dan** [Product model, API]
 
-  Front-end(CSS/AJAX): **Nate** [Routes & Controllers, CSS & Views, AJAX]
+  Front-end(CSS/AJAX): **Nate** [Main Server.js, Routes & Controllers, CSS & Views, AJAX]
 
 **Instructions**
 
