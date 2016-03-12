@@ -8,7 +8,7 @@
 
 Name |  Email |	Slack |	GitHub
 --- | --- | --- | ---
-Daniel Kaiser |	dskaiser82@gmail.com |	@dskaiser82 |	
+Daniel Kaiser |	dskaiser82@gmail.com |	@dskaiser82 |	dskaiser82
 Joe Villarba |	socagambit@aol.com |	@joev |	jvillarba
 Nathan Castor |	nathancastor@gmail.com |	@ncastor |	nathan-castor
 
@@ -19,6 +19,7 @@ Nathan Castor |	nathancastor@gmail.com |	@ncastor |	nathan-castor
   API Lead: **Dan** [Product model, API]
 
   Front-end(CSS/AJAX): **Nate** [Main Server.js, Routes & Controllers, CSS & Views, AJAX]
+![Image](/public/images/roles.jpg)
 
 **Instructions**
 
@@ -40,7 +41,7 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 - Any items with a (?) question mark
 
 
-#### Technologies / Framework:
+#### Technologies:
 - [x] `M`ongoDB  `E`xpress  `N`ode.js
 - [x] HTML / CSS
 - [x] Javascript
@@ -54,4 +55,9 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 - ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
 - ![Image](https://upload.wikimedia.org/wikipedia/en/2/28/Instagram_logo.png)Instagram OAuth?
 - ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
-- Amazon API
+- ![Image](/public/images/logo.png)Amazon API
+
+#### Framework:
+- ![Image](/public/images/overall_frame.jpg)
+- ![Image](/public/images/owner_model.jpg)
+- ![Image](/public/images/TY_model.jpg)
