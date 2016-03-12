@@ -1,4 +1,4 @@
-![Image](http://z09ob3oehl727ogck40ggahz.wpengine.netdna-cdn.com/wp-content/uploads/2015/05/GeneralAssembly_logo2.png)
+![Image](/public/images/logo.png)
 # GIFT ROULETTE:gift:
 ## WDI_SM_21 Project Three
 
@@ -55,7 +55,7 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 - ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
 - ![Image](https://upload.wikimedia.org/wikipedia/en/2/28/Instagram_logo.png)Instagram OAuth?
 - ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
-- ![Image](/public/images/logo.png)Amazon API
+- ![Image](http://adventurepockets.com/wp-content/uploads/2013/10/Amazon-logo.jpg)Amazon API
 
 #### Framework:
 - ![Image](/public/images/overall_frame.jpg)
