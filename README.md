@@ -51,13 +51,13 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 - [ ] Stripe?
 
 #### Credits:
-- ![Image](https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png)Heroku
-- ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
-- ![Image](https://upload.wikimedia.org/wikipedia/en/2/28/Instagram_logo.png)Instagram OAuth?
-- ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
-- ![Image](http://adventurepockets.com/wp-content/uploads/2013/10/Amazon-logo.jpg)Amazon API
+![Image](https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png)Heroku
+![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
+![Image](https://upload.wikimedia.org/wikipedia/en/2/28/Instagram_logo.png)Instagram OAuth?
+![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
+![Image](http://adventurepockets.com/wp-content/uploads/2013/10/Amazon-logo.jpg)Amazon API
 
 #### Framework:
-- ![Image](/public/images/overall_frame.jpg)
-- ![Image](/public/images/owner_model.jpg)
-- ![Image](/public/images/TY_model.jpg)
+These photos are a draft of the homepage and completion views.
+![Image](/public/images/overall_frame.jpg)
+![Image](/public/images/TY_model.jpg)
