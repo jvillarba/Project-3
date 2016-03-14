@@ -1,19 +1,20 @@
 var
-	express = require('express'),
-	app = express(),
-	ejs = require('ejs'),
-	ejsLayouts = require('express-ejs-layouts'),
-	mongoose = require('mongoose'),
-	flash = require('connect-flash'),
-	logger = require('morgan'),
-	cookieParser = require('cookie-parser'),
-	bodyParser = require('body-parser'),
-	session = require('express-session'),
-	passport = require('passport'),
+	express				 = require('express'),
+	app 					 = express(),
+	ejs 					 = require('ejs'),
+	ejsLayouts 		 = require('express-ejs-layouts'),
+	mongoose 			 = require('mongoose'),
+	flash 				 = require('connect-flash'),
+	logger 				 = require('morgan'),
+	cookieParser 	 = require('cookie-parser'),
+	bodyParser 		 = require('body-parser'),
+	session 			 = require('express-session'),
+	passport 			 = require('passport'),
 	passportConfig = require('./config/passport.js'),
-	userRoutes = require('./routes/users.js'),
-	apiRoutes = require('./routes/api.js'),
-	path = require('path')
+	userRoutes 		 = require('./routes/users.js'),
+	apiRoutes 		 = require('./routes/api.js'),
+	path 					 = require('path'),
+	request				 = require('request')
 
 app.use("/public", express.static(path.join(__dirname, 'public')));
 

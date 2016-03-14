@@ -1,9 +1,10 @@
 //user routes
 
 var
-  express = require('express'),
-  passport = require('passport'),
-  userRouter = express.Router()
+  express    = require('express'),
+  passport   = require('passport'),
+  userRouter = express.Router(),
+  userCtrl   = require('../controllers/users.js')
 
 userRouter.route('/roulette')
   .get(function(req,res) {
