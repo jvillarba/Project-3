@@ -54,14 +54,14 @@ var $spin = $('#spin')
   $spin.on('click',function() {
 
     $.ajax({
-      url: "/api",
+      url: "/api/1",
       method: 'GET'
     }).done(function(data) {
         $('#box-1').attr('src', data.imageResult.mediumImage);
         console.log(data);
     });
     $.ajax({
-      url: "/api",
+      url: "/api/2",
       method: 'GET'
     }).done(function(data) {
         $('#box-2').attr('src', data.imageResult.mediumImage);
