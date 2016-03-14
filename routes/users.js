@@ -6,6 +6,15 @@ var
   userRouter = express.Router(),
   userCtrl   = require('../controllers/users.js')
 
+userRouter.route('/users')
+  .get(userCtrl.index)
+  .post(userCtrl.create)
+
+userRouter.route('/users/:id')
+  .patch(userCtrl.update)
+  .get(userCtrl.show)
+  .delete(userCtrl.destroy)
+
 userRouter.route('/roulette')
   .get(function(req,res) {
     res.render('roulette')
