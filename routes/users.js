@@ -5,6 +5,10 @@ var
   passport = require('passport'),
   userRouter = express.Router()
 
+userRouter.route('/roulette')
+  .get(function(req,res) {
+    res.render('roulette')
+  })
 
 userRouter.route('/login')
   .get(function(req,res) {

@@ -12,6 +12,9 @@ var
 	passport = require('passport'),
 	passportConfig = require('./config/passport.js'),
 	userRoutes = require('./routes/users.js')
+	path = require('path')
+
+app.use("/public", express.static(path.join(__dirname, 'public')));
 
 // environment port
 var port = process.env.PORT || 3000
