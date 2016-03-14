@@ -5,7 +5,7 @@
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-1" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
       </div>
     </div>
   </div>
@@ -13,7 +13,7 @@
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-2" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-3" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="fourth-box" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-4" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
       </div>
     </div>
   </div>
@@ -49,14 +49,39 @@
 </div>
 
 <script type="text/javascript">
+
 var $spin = $('#spin')
   $spin.on('click',function() {
+
     $.ajax({
       url: "/api",
       method: 'GET'
     }).done(function(data) {
-      $('#fourth-box').attr('src', data.imageResult.mediumImage);
-      console.log(data);
+        $('#box-1').attr('src', data.imageResult.mediumImage);
+        console.log(data);
     });
+    $.ajax({
+      url: "/api",
+      method: 'GET'
+    }).done(function(data) {
+        $('#box-2').attr('src', data.imageResult.mediumImage);
+        console.log(data);
+    });
+    $.ajax({
+      url: "/api",
+      method: 'GET'
+    }).done(function(data) {
+        $('#box-3').attr('src', data.imageResult.mediumImage);
+        console.log(data);
+    });
+    $.ajax({
+      url: "/api",
+      method: 'GET'
+    }).done(function(data) {
+        $('#box-4').attr('src', data.imageResult.mediumImage);
+        console.log(data);
+    });
+
   })
+
 </script>
