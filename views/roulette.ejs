@@ -49,37 +49,42 @@
 </div>
 
 <script type="text/javascript">
+var mathRan = function (){return (Math.floor(Math.random() * (20 - 0)) + 0)}
 
 var $spin = $('#spin')
   $spin.on('click',function() {
 
     $.ajax({
-      url: "/api/1",
+      url: "/api",
       method: 'GET'
     }).done(function(data) {
-        $('#box-1').attr('src', data.imageResult.mediumImage);
-        console.log(data);
-    });
-    $.ajax({
-      url: "/api/2",
-      method: 'GET'
-    }).done(function(data) {
-        $('#box-2').attr('src', data.imageResult.mediumImage);
-        console.log(data);
+        // var mathRan = function (){return (Math.floor(Math.random() * (data.imageResult.length - 0)) + 0)}
+        $('#box-1').attr('src', data.imageResult[mathRan()].mediumImage);
+        console.log(mathRan());
     });
     $.ajax({
       url: "/api",
       method: 'GET'
     }).done(function(data) {
-        $('#box-3').attr('src', data.imageResult.mediumImage);
-        console.log(data);
+
+        $('#box-2').attr('src', data.imageResult[mathRan()].mediumImage);
+        //console.log(data.imageResult.items[mathRan]);
     });
     $.ajax({
       url: "/api",
       method: 'GET'
     }).done(function(data) {
-        $('#box-4').attr('src', data.imageResult.mediumImage);
-        console.log(data);
+
+        $('#box-3').attr('src', data.imageResult[mathRan()].mediumImage);
+        //console.log(data);
+    });
+    $.ajax({
+      url: "/api",
+      method: 'GET'
+    }).done(function(data) {
+
+        $('#box-4').attr('src', data.imageResult[mathRan()].mediumImage);
+        //console.log(data.imageResult.items[mathRan]);
     });
 
   })
