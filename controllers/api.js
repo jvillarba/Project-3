@@ -17,12 +17,8 @@ module.exports = {
       var data = { //this for our index view, myHeader is a variable for the home page view
         imageResult: body.items[0]
       }
-      // body.response.employers.each(function(el){
-      // 	if(el.industry) {
-      // 		industries.push(el.industry)
-      // 	}
-      // })
-      res.render('products', data)
+      
+      res.json(data)
     })
 
 
