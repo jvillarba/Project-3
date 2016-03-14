@@ -46,7 +46,7 @@ app.use(ejsLayouts)
 
 //root route
 app.get('/', function(req,res){
-	res.sendFile(_dirname + '/views/roulette.js')
+	res.render('roulette')
 })
 
 // user routes
