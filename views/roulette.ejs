@@ -64,7 +64,7 @@ var $spin = $('#spin')
       url: "/api",
       method: 'GET'
     }).done(function(data) {
-        $('#box-2').attr('src', data.imageResult.mediumImage);
+        $('#box-2').attr('src', data.imageResult.items[mathRan].mediumImage);
         console.log(data);
     });
     $.ajax({
