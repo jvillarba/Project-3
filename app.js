@@ -16,7 +16,7 @@ var
 	path 					 = require('path'),
 	request				 = require('request')
 
-app.use("/public", express.static(path.join(__dirname, 'public')));
+app.use("/public", express.static(path.join(__dirname, 'public')))
 
 // environment port
 var port = process.env.PORT || 3000
@@ -24,7 +24,7 @@ var port = process.env.PORT || 3000
 // mongoose connection
 mongoose.connect('mongodb://localhost/gift-db', function(err){
 	if(err) return console.log('Cannot connect :(')
-	console.log('Connected to MongoDB. Sweet!')
+	console.log('Connected to MongoDB. Sweet! (gift-db)')
 })
 
 // middleware
@@ -46,15 +46,15 @@ app.use(ejsLayouts)
 
 //root route
 app.get('/', function(req,res){
-	res.render('index')
+	res.render('roulette')
 })
 
 // user routes
 app.use('/', userRoutes)
 
-//product/order Routes
+// product/order Routes
 
-//api routes
+// api routes
 app.get('/api', apiRoutes)
 
 
