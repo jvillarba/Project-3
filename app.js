@@ -11,7 +11,8 @@ var
 	session = require('express-session'),
 	passport = require('passport'),
 	passportConfig = require('./config/passport.js'),
-	userRoutes = require('./routes/users.js')
+	userRoutes = require('./routes/users.js'),
+	apiRoutes = require('./routes/api.js'),
 	path = require('path')
 
 app.use("/public", express.static(path.join(__dirname, 'public')));
@@ -50,6 +51,16 @@ app.get('/', function(req,res){
 // user routes
 app.use('/', userRoutes)
 
+//product/order Routes
+
+//api routes
+app.get('/api', apiRoutes)
+
+
+
+
+
+//========================================================================
 app.listen(port, function(){
 	console.log("Server running on port", port)
 })
