@@ -49,7 +49,6 @@
 </div>
 
 <script type="text/javascript">
-var mathRan = function (){return (Math.floor(Math.random() * (20 - 0)) + 0)}
 
 var $spin = $('#spin')
   $spin.on('click',function() {
@@ -59,32 +58,10 @@ var $spin = $('#spin')
       method: 'GET'
     }).done(function(data) {
         // var mathRan = function (){return (Math.floor(Math.random() * (data.imageResult.length - 0)) + 0)}
-        $('#box-1').attr('src', data.imageResult[mathRan()].mediumImage);
-        console.log(mathRan());
-    });
-    $.ajax({
-      url: "/api",
-      method: 'GET'
-    }).done(function(data) {
-
-        $('#box-2').attr('src', data.imageResult[mathRan()].mediumImage);
-        //console.log(data.imageResult.items[mathRan]);
-    });
-    $.ajax({
-      url: "/api",
-      method: 'GET'
-    }).done(function(data) {
-
-        $('#box-3').attr('src', data.imageResult[mathRan()].mediumImage);
-        //console.log(data);
-    });
-    $.ajax({
-      url: "/api",
-      method: 'GET'
-    }).done(function(data) {
-
-        $('#box-4').attr('src', data.imageResult[mathRan()].mediumImage);
-        //console.log(data.imageResult.items[mathRan]);
+        for (var i = 1; i < 5; i++) {
+          $('#box-'+i).attr('src', data[i-1]);
+          console.log(data[i-1]);
+        }
     });
 
   })
