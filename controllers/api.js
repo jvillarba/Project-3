@@ -21,16 +21,20 @@ module.exports = {
     var data = []
 
     request({url: catArray[0], json: true}, function(error, response, body){
-      //console.log()
-      data.push(body.items[mathRan2()].mediumImage)
+      var randoItem = body.items[mathRan2()]
+      data.push(randoItem)
+      
       request({url: catArray[1], json: true}, function(error, response, body){
-        data.push(body.items[mathRan2()].mediumImage)
+        var randoItem = body.items[mathRan2()]
+        data.push(randoItem)
 
         request({url: catArray[2], json: true}, function(error, response, body){
-          data.push(body.items[mathRan2()].mediumImage)
+          var randoItem = body.items[mathRan2()]
+          data.push(randoItem)
 
           request({url: catArray[3], json: true}, function(error, response, body){
-            data.push(body.items[mathRan2()].mediumImage)
+            var randoItem = body.items[mathRan2()]
+            data.push(randoItem)
 
             res.json(data)
           }) // End of API request 4
