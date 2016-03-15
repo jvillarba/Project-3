@@ -8,7 +8,7 @@ var
     .get(orderCtrl.index)
     .post(orderCtrl.create)
 
-  orderRouter.route('/orders/:id')
+  orderRouter.route('/users/:id/orders')
     .patch(orderCtrl.update)
     .get(orderCtrl.show)
     .delete(orderCtrl.destroy)

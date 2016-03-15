@@ -10,14 +10,14 @@ var userSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    _order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
+    //_order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
   },
   facebook: {
     id: String,
     name: String,
     token: String,
     email: String,
-    _order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
+    //_order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
   }
 })
 
