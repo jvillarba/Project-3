@@ -1,6 +1,7 @@
 //user model
 var
   mongoose = require('mongoose'),
+  Order = require('../models/order.js')
   bcrypt = require('bcrypt-nodejs'),
   Schema = mongoose.Schema
 
@@ -8,13 +9,15 @@ var userSchema = new Schema({
   local: {
     name: String,
     email: String,
-    password: String
+    password: String,
+    //_order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
   },
   facebook: {
     id: String,
     name: String,
     token: String,
-    email: String
+    email: String,
+    //_order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
   }
 })
 

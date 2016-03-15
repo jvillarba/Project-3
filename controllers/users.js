@@ -1,7 +1,6 @@
 var User = require('../models/User.js')
 
 module.exports = {
-
   // GET all users
   index: function(req, res){
     User.find({}, function(err, users){

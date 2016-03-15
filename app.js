@@ -13,8 +13,10 @@ var
 	passportConfig = require('./config/passport.js'),
 	userRoutes 		 = require('./routes/users.js'),
 	apiRoutes 		 = require('./routes/api.js'),
+	orderRoutes 	= require('./routes/orders.js'),
 	path 					 = require('path'),
-	request				 = require('request')
+	request				 = require('request'),
+	bodyParser     = require('body-parser');
 
 app.use("/public", express.static(path.join(__dirname, 'public')))
 
@@ -53,6 +55,7 @@ app.get('/', function(req,res){
 app.use('/', userRoutes)
 
 // product/order Routes
+app.use('/', orderRoutes)
 
 // api routes
 app.get('/api', apiRoutes)
