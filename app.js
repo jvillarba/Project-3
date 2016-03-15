@@ -23,11 +23,13 @@ app.use("/public", express.static(path.join(__dirname, 'public')))
 // environment port
 var port = process.env.PORT || 3000
 
+// connect to MLAB (mongo db)
+var DB_URL = 'mongodb://giftbot:secure@ds015909.mlab.com:15909/giftsdb'
 // mongoose connection
-mongoose.connect('mongodb://localhost/gift-db', function(err){
-	if(err) return console.log('Cannot connect :(')
-	console.log('Connected to MongoDB. Sweet! (gift-db)')
-})
+// mongoose.connect('mongodb://localhost/gift-db', function(err){
+// 	if(err) return console.log('Cannot connect :(')
+// 	console.log('Connected to MongoDB. Sweet! (gift-db)')
+// })
 
 // middleware
 app.use(logger('dev'))
