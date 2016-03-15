@@ -38,7 +38,6 @@ module.exports = {
   update: function(req, res){
     User.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, user){
       if(err) return console.log(err)
-      user.completed = !user.completed
       user.save(function(err, user){
         if(err) return console.log(err)
         res.json({success: true, updatedUser: user})
