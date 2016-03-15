@@ -9,10 +9,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<% include ./partials/nav %>
+	<% include ./partials/nav %>
+	<div class="container" style="text-align: center">
 		<%- body %>
-		<% include ./partials/footer %>
 	</div>
+	<% include ./partials/footer %>
 </body>
 </html>
