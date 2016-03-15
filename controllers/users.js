@@ -29,7 +29,7 @@ module.exports = {
   destroy: function(req, res){
     User.findOneAndRemove({_id: req.params.id}, function(err){
       if(err) return console.log(err)
-      res.json({success: true, message: "User deleted", user})
+      res.json({success: true, message: "User deleted"})
     })
   },
 
