@@ -16,13 +16,15 @@
     "express": "^4.13.3",
     "express-ejs-layouts": "^2.0.0",
     "express-session": "^1.12.1",
+    "materialize-css": "^0.97.5",
     "mongoose": "^4.2.6",
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "stripe": "^4.4.0"
   },
   "devDependencies": {},
   "description": ""
