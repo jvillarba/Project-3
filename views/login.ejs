@@ -15,6 +15,11 @@
             <input type="password" class="form-control" name="password">
         </div>
 
+        <input id="p1" type="hidden" name="product1" value="">
+        <input id="p2" type="hidden" name="product2" value="">
+        <input id="p3" type="hidden" name="product3" value="">
+        <input id="p4" type="hidden" name="product4" value="">
+
         <button type="submit" class="btn btn-info btn-lg">Login</button>
     </form>
 
@@ -26,3 +31,27 @@
     <p>Go back <a href="/">home</a>.</p>
 
 </div>
+
+<script>
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  url = url.toLowerCase(); // This is just to avoid case sensitiveness
+  name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+if(getParameterByName('product1')){
+  // $('#p1').val(getParameterByName('product1'))
+  // $('#p2').val(getParameterByName('product2'))
+  // $('#p3').val(getParameterByName('product3'))
+  // $('#p4').val(getParameterByName('product4'))
+  sessionStorage.setItem('product1', getParameterByName('product1'));
+  sessionStorage.setItem('product2', getParameterByName('product2'));
+  sessionStorage.setItem('product3', getParameterByName('product3'));
+  sessionStorage.setItem('product4', getParameterByName('product4'));
+}
+</script>

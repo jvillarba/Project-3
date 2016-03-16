@@ -20,12 +20,17 @@ userRouter.route('/gifts')
     res.render('gifts', {user: req.user})
   })
 
+userRouter.route('/')
+  .get(function(req,res) {
+    res.render('start', {user: req.user})
+  })
+
 userRouter.route('/login')
   .get(function(req,res) {
     res.render('login', {message: req.flash('loginMessage'), user: req.user})
   })
   .post(passport.authenticate('local-login', {
-    successRedirect: '/profile',
+    successRedirect: '/gifts',
     failureRedirect: '/login'
   }))
 
@@ -54,7 +59,7 @@ userRouter.get('/auth/facebook', passport.authenticate('facebook',{
 }))
 
 userRouter.get('/auth/facebook/callback', passport.authenticate('facebook',{
-  successRedirect: '/profile',
+  successRedirect: '/gifts',
   failureRedirect: '/login'
 }))
 
