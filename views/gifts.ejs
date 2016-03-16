@@ -1,6 +1,21 @@
+<style>
+.progress{
+  background-color: #ffcc80
+}
+h1{
+  font-family: 'Candal', sans-serif;
+}
+</style>
+
+
 <h1 class="text-center">Start Gift Bot</h1>
 
 <div class="row" style="height:350px">
+
+<!-- load bar -->
+<div class="progress">
+      <div class="indeterminate orange darken-1"></div>
+</div>
 
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
@@ -47,12 +62,12 @@
 <div class="row center-align"> -->
 
   <div>
-    <button id="spin" type="button" class="btn btn-primary">SPIN!</button>
+    <button id="spin" type="button" class="btn  orange darken-1">SPIN!</button>
   </div>
   <br>
 
   <div>
-    <button id="checkout" type="button" class="btn btn-warning">Checkout</button>
+    <button id="checkout" type="button" class="btn  red accent-4">Checkout</button>
   </div>
 
 </div>
@@ -60,14 +75,19 @@
 
 
 <script type="text/javascript">
+    $( ".progress" ).hide(); //hide load bar
+      $( "#checkout" ).hide(); //hide checkout button
 
   var $spin = $('#spin')
     $spin.on('click',function() {
+         $( ".progress" ).show(); //show load bar
+           $( "#checkout" ).show(); //show checkout button
 
       $.ajax({
         url: "/api",
         method: 'GET'
       }).done(function(data) {
+          $( ".progress" ).hide(); //hide load bar
           var totalPrice = 0
           for (var i = 1; i < 5; i++) {
             $('#box-'+i).attr('src', data[i-1].mediumImage);
@@ -75,7 +95,7 @@
             totalPrice += data[i-1].salePrice
             console.log(data[i-1]);
           }
-          $('#total-price').text('$'+(Math.ceil(totalPrice+10)))
+          $('#total-price').text('$'+(Math.ceil(totalPrice-15)))
       });
 
   })
