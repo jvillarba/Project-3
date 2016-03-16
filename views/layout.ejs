@@ -15,12 +15,16 @@
 		<%- body %>
 	</div>
 	<% include ./partials/footer %>
-	<script>
-	$(".button-collapse").sideNav();
-	$('.modal-trigger').leanModal();
+
+	<script type="text/javascript">
+			var user = <%-JSON.stringify(user)%>
+
+		$(".button-collapse").sideNav();
+		$('.modal-trigger').leanModal();
+		// $('#logout-button').hide()
 	// $('#aside').pushpin({ top:110, bottom:500 });
 	</script>
 
-	
+
 </body>
 </html>
