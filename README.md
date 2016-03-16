@@ -1,5 +1,5 @@
 ![Image](/public/images/logo.png)
-# GIFT ROULETTE:gift:
+# GIFT:gift:BOT
 ## WDI_SM_21 Project Three
 
 > *Our website is your online destination to make shopping fun and easy with an element of surprise*
@@ -53,9 +53,8 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 #### Credits:
 ![Image](https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png)Heroku
 ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
-![Image](https://upload.wikimedia.org/wikipedia/en/2/28/Instagram_logo.png)Instagram OAuth?
 ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
-![Image](http://adventurepockets.com/wp-content/uploads/2013/10/Amazon-logo.jpg)Amazon API
+Walmart API
 
 #### Framework:
 These photos are a draft of the homepage and completion views.

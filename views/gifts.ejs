@@ -87,9 +87,13 @@ h1{
   $( ".progress" ).hide(); //hide load bar
   $( "#checkout" ).hide(); //hide checkout button
 
+
+
   var $spin = $('#spin')
     $spin.on('click',function() {
+
       $( ".progress" ).show(); //show load bar
+      $( "#checkout" ).show(); //show checkout button
 
       $.ajax({
         url: "/api",
