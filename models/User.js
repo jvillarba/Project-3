@@ -18,7 +18,9 @@ var userSchema = new Schema({
     token: String,
     email: String
   },
-    orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
+  address: [{type: mongoose.Schema.Types.ObjectId, ref: 'Address'}],
+  orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}],
+  credit: [{type: mongoose.Schema.Types.ObjectId, ref: 'Credit'}]
 })
 
 userSchema.methods.generateHash = function(password) {

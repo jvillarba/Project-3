@@ -5,94 +5,79 @@
     <div class="row">
         <div class="col s12">
           <ul class="tabs">
-            <li class="tab col s2"><a class="active" href="#test1">Profile</a></li>
-            <li class="tab col s2"><a href="#test2">Billing</a></li>
-            <li class="tab col s2"><a href="#test3">Purchases</a></li>
+            <li class="tab col s2"><a class="active" href="#profile">Profile</a></li>
+            <li class="tab col s2"><a href="#billing">Billing</a></li>
+            <li class="tab col s2"><a href="#purchase">Purchases</a></li>
             <li class="tab col s2 disabled"><a href="#test4"></a></li>
             <li class="tab col s2 disabled"><a href="#test5"></a></li>
             <li class="tab col s2 disabled"><a href="#test6"></a></li>
           </ul>
         </div>
-        <div id="test1" class="col s12">
+        <div id="profile" class="col s12" style="text-align: left">
             <!-- <h3>Profile</h3> -->
-          <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <i class="material-icons prefix">phone</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Telephone</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">home</i>
-                    <input id="icon_address" type="tel" class="validate">
-                    <label for="icon_address">Address</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">email</i>
-                    <input id="email" type="email" class="validate">
-                    <label for="email" data-error="wrong" data-success="right">Email</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">lock</i>
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                  </div>
+            <div class="row">
+                <div class="col s6">
+                    <h6 class="mdi-action-account-box">Name</h6>
+                    <p><%= user.local.name || user.facebook.name %></p>
                 </div>
-              </form>
+                <div class="col s6">
+                    <h6 class="mdi-hardware-phone-android">Phone Number</h6>
+                    <p>+91 9912776151</p>
+                </div>
+                <div class="col s12 profile">
+                    <h6 class="mdi-action-home">Address</h6>
+                    <p>1234 Street, Santa Monica, CA 90401</p>
+                </div>
+                <div class="col s12">
+                    <h6 class="mdi-content-mail">Email</h6>
+                    <p><%= user.local.email || user.facebook.email %></p>
+                </div>
+                <div class="col s12">
+                  <h6 class="mdi-action-lock">Password</h6>
+                  <p><%= user.local.password || user.facebook.token %></p>
+                </div>
+
             </div>
-          </div>
-        <div id="test2" class="col s12">
+            <p style="text-align: center">
+                <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
+            </p>
+        </div>
+        <div id="billing" class="col s12" style="text-align: left">
           <!-- <h3>Billing</h3> -->
-          <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <i class="material-icons prefix">credit_card</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Card Number</label>
-                  </div>
-                  <div class="input-field col s4">
-                    <i class="material-icons prefix">date</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Expiration</label>
-                  </div>
-                  <div class="input-field col s2">
-                    <i class="material-icons prefix">cvv</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">CVV</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Name</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">home</i>
-                    <input id="icon_address" type="tel" class="validate">
-                    <label for="icon_address">Address</label>
-                  </div>
-                  <p style="text-align: center">
-                      <a href="#" class="btn btn-flat white modal-close">Cancel</a>
-                      <a href="#" class="waves-effect waves" type="submit" name="action">Submit</a>
-                  </p>
+            <div class="row">
+                <div class="col s6">
+                    <h6 class="mdi-action-credit-card">Credit Card Number</h6>
+                    <p>1234 1234 1234 1234</p>
                 </div>
-              </form>
+                <div class="col s4">
+                    <h6>Exp. Date (MM/YY)</h6>
+                    <p>MM/YY</p>
+                </div>
+                <div class="col s2">
+                    <h6>CVV</h6>
+                    <p>1234</p>
+                </div>
+                <div class="col s12">
+                    <h6 class="mdi-action-account-box">Name</h6>
+                    <p><%= user.local.name || user.facebook.name %></p>
+                </div>
+                <div class="col s12 profile">
+                    <h6 class="mdi-action-home">Address</h6>
+                    <p>1234 Street, Santa Monica, CA 90401</p>
+                </div>
             </div>
+            <p style="text-align: center">
+                <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
+            </p>
         </div>
-        <div id="test3" class="col s12">Purchases
-        </div>
-        <!-- <div id="test4" class="col s12">Test 4</div> -->
-      </div>
-
-    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-
+    </div>
 </div>
+      <!-- <div id="test4" class="col s12">Test 4</div> -->
+  <!-- </div>
+
+<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+</div> -->
 <script type="text/javascript">
   var user = <%-JSON.stringify(user)%>
 </script>
