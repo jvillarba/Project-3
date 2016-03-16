@@ -1,3 +1,4 @@
+require('dotenv').config();
 var
 	express				 = require('express'),
 	app 					 = express(),
@@ -18,17 +19,18 @@ var
 	request				 = require('request'),
 	bodyParser     = require('body-parser');
 
+
 app.use("/public", express.static(path.join(__dirname, 'public')))
 
 // environment port
 var port = process.env.PORT || 3000
 
 // connect to MLAB (mongo db)
-// var DB_URL = 'mongodb://giftbot:secure@ds015909.mlab.com:15909/giftsdb'
+var DB_URL = process.env.MLAB_LINK || 'mongodb://localhost/gift-db'
 // mongoose connection
-mongoose.connect('mongodb://localhost/gift-db', function(err){
+mongoose.connect(DB_URL, function(err){
 	if(err) return console.log('Cannot connect :(')
-	console.log('Connected to MongoDB. Sweet! (gift-db)')
+	console.log('Connected to MongoDB. Sweet!', DB_URL)
 })
 
 // middleware
