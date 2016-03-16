@@ -1,13 +1,8 @@
-<!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Login</h4>
-      <p>A bunch of text</p>
+<div class="col-sm-6 col-sm-offset-3">
+    <h1>Login</h1>
 
     <% if(message.length > 0) { %>
-      <div class="alert alert-danger">
-        <%= message %>
-      </div>
+    <div class="alert alert-danger"><%= message %></div>
     <% } %>
 
     <form action="/login" method="post">
@@ -20,56 +15,14 @@
             <input type="password" class="form-control" name="password">
         </div>
 
-        <!-- <button type="submit" class="btn btn-info btn-lg">Login</button> -->
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-        </button>
+        <button type="submit" class="btn btn-info btn-lg">Login</button>
     </form>
 
-    <!-- <hr> -->
+    <hr>
 
-    <h4>Or Login With <a href="/auth/facebook" class="waves-effect waves-light btn indigo darken-2">Facebook</a></h4>
+    <h3>Or Login With <a href="/auth/facebook" class="btn indigo darken-2">Facebook</a></h3>
 
-  <p>Or, <a href="/signup">Signup</a></p>
-  <p>Go back <a href="/">home</a>.</p>
+    <p>Or, <a href="/signup">Signup</a></p>
+    <p>Go back <a href="/">home</a>.</p>
 
 </div>
-</div>
-<div class="modal-footer">
-  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-</div>
-</div>
-
-
-<!--login modal-->
-<!-- <div id="modalLogin" class="modal">
-    <div class="modal-content">
-        <h2 class="center-align">Login</h2>
-        <div class="center-align">
-            <div class="divider"></div>
-            <form class="col s12">
-                <div class="row center-align">
-                    <div class="input-field col m10 offset-m1 blue-text">
-                        <i class="mdi-action-account-circle prefix"></i>
-                        <input id="icon_prefix" type="text" class="validate">
-                        <label for="icon_prefix">Username</label>
-                    </div>
-                    <div class="input-field col m10 offset-m1 blue-text ">
-                        <i class="mdi-action-lock-open prefix"></i>
-                        <input id="icon_password" type="password" class="validate">
-                        <label for="icon_password">Password</label>
-                    </div>
-                    <div class="input-field col m10 offset-m1 blue-text">
-                        <input type="checkbox" class="blue-text" id="filled-in-box" checked="checked">
-                        <label for="filled-in-box">Remember me next time</label>
-                    </div>
-                </div>
-            </form>
-            <div class="divider"></div>
-            <p>
-                <a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
-                <a href="#" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close">Login</a>
-            </p>
-        </div>
-    </div>
-</div> -->

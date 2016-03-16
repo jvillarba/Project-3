@@ -1,36 +1,106 @@
-<!-- <head>
+
+<head>
     <style>
       .{
       font-family: 'Martel Sans', sans-serif;
       }
     </style>
-<header> -->
+<header>
 
 
 </head>
-<!-- ********************** -->
-
-
-  <div class="navbar-fixed">
+  <div class="navbar">
       <nav class="#263238 blue-grey darken-4">
           <div class="nav-wrapper container">
-              <a href="#!" class="brand-logo">&nbsp;<img alt="Brand" src="../public/images/logo/logo-gb-tp.png"></a>
+              <a href="/" class="brand-logo">&nbsp;<img alt="Brand" src="../public/images/logo/logo-gb-tp.png"></a>
               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
               <ul class="right hide-on-med-and-down">
-                  <li><a href="#modalLogin" class="modal-trigger"><i class=" mdi-action-perm-identity">Login</i></a></li>
-                  <li><a href="#"><i class="mdi-action-perm-identity">Account</i></a></li>
+                <li><a href="/profile"><i class="mdi-action-perm-identity">Account</i></a></li>
+                <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity">Login</i></a></li>
+
               </ul>
               <ul class="side-nav" id="mobile-demo">
-                  <li>
+                  <!-- <li>
                       <a href="#">
                           <input id="search" type="search" placeholder="search">
                       </a>
-                  </li>
+                  </li> -->
                   <li><a href="#">About</a></li>
                   <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity">Login</i></a></li>
-                  <li><a href="#"><i class="mdi-action-perm-identity">Account</i></a></li>
+                  <li><a href="/profile"><i class="mdi-action-perm-identity">Account</i></a></li>
               </ul>
-          </div>
+          <!-- </div> -->
       </nav>
   </div>
-</header>
+<!-- </header> -->
+
+<!--login modal-->
+<div id="modalLogin" class="modal">
+    <div class="modal-content">
+        <h3 class="center-align">Login</h3>
+        <div class="center-align">
+            <div class="divider"></div>
+            <form class="col s12" action="/login" method="post">
+                <div class="row center-align">
+                    <div class="input-field col m10 offset-m1 blue-text">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input id="icon_prefix" type="text" class="validate" name="email">
+                        <label for="icon_prefix">Email</label>
+                    </div>
+                    <div class="input-field col m10 offset-m1 blue-text ">
+                        <i class="mdi-action-lock-open prefix"></i>
+                        <input id="icon_password" type="password" class="validate" name="password">
+                        <label for="icon_password">Password</label>
+                    </div>
+                    <div class="input-field col m10 offset-m1 blue-text">
+                        <input type="checkbox" class="blue-text" id="filled-in-box" checked="checked">
+                        <label for="filled-in-box">Remember me next time</label>
+                    </div>
+                </div>
+            </form>
+            <div class="divider"></div>
+            <p>
+                <a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
+                <a href="#" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close" type="submit" name="action">Login</a>
+                <h6>Or Login With <a href="/auth/facebook" class="waves-effect waves-light btn indigo darken-2">Facebook</a></h6>
+            </p>
+            <p><a href="/signup">signup</a> or go back <a href="/">home</a>.</p>
+        </div>
+    </div>
+</div>
+
+<!--signup modal-->
+<div id="modalsignup" class="modal">
+    <div class="modal-content">
+        <h3 class="center-align">Signup</h3>
+        <div class="center-align">
+            <div class="divider"></div>
+            <form class="col s12" action="/signup" method="post">
+                <div class="row center-align">
+                    <div class="input-field col m10 offset-m1 blue-text">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input id="icon_prefix" type="text" class="validate" name="name">
+                        <label for="icon_prefix">Name</label>
+                    </div>
+                    <div class="input-field col m10 offset-m1 blue-text">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input id="icon_prefix" type="text" class="validate" name="email">
+                        <label for="icon_prefix">Email</label>
+                    </div>
+                    <div class="input-field col m10 offset-m1 blue-text ">
+                        <i class="mdi-action-lock-open prefix"></i>
+                        <input id="icon_password" type="password" class="validate" name="password">
+                        <label for="icon_password">Password</label>
+                    </div>
+                </div>
+            </form>
+            <div class="divider"></div>
+            <p>
+                <a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
+                <a href="#" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close" type="submit" name="action">Signup</a>
+                <h5>Or Login With <a href="/auth/facebook" class="waves-effect waves-light btn indigo darken-2">Facebook</a></h5>
+            </p>
+            <p><a href="#modalLogin">Login</a> or go back <a href="/">home</a>.</p>
+        </div>
+    </div>
+</div>
