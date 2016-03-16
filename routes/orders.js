@@ -4,14 +4,18 @@ var
   orderRouter = express.Router(),
   orderCtrl   = require('../controllers/orders.js')
 
-  orderRouter.route('/orders')
-    .get(orderCtrl.index)
-    .post(orderCtrl.createOrder)
+orderRouter.route('/orders')
+  .get(orderCtrl.index)
+  .post(orderCtrl.createOrder)
 
-  orderRouter.route('/orders/:id')
-    .put(orderCtrl.update)
-    .get(orderCtrl.show)
-    .delete(orderCtrl.destroy)
+orderRouter.route('/orders/:id', isLoggedIn)
+  .put(orderCtrl.update)
+  .get(orderCtrl.show)
+  .delete(orderCtrl.destroy)
 
+function isLoggedIn(req,res,next) {
+  if (req.isAuthenticated()) return next()
+  res.redirect('/login')
+}
 
-  module.exports = orderRouter
+module.exports = orderRouter

@@ -60,7 +60,7 @@
 
 
 <script type="text/javascript">
-
+  var productIDs = []
   var $spin = $('#spin')
     $spin.on('click',function() {
 
@@ -74,21 +74,23 @@
             $('#name-'+i).text(data[i-1].name);
             totalPrice += data[i-1].salePrice
             console.log(data[i-1]);
+            productIDs[i-1] = data[i-1].itemId
           }
           $('#total-price').text('$'+(Math.ceil(totalPrice+10)))
       });
-  })
+    })
 
   var $checkout = $('#checkout')
     $checkout.on('click',function() {
 
       $.ajax({
-        url: "/orders/id",
-        method: 'PUT'
+        url: "/orders", // how do I get the id?
+        method: 'POST',
+        body: productIDs // does this array work as body, is it the same as req.body???
       }).done(function(data) {
-        
+        // modal for checkout that pulls from the database and makes a new API req.
       });
 
-  })
+    })
 
 </script>

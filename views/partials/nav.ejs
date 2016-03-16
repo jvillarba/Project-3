@@ -15,8 +15,16 @@
               <a href="/" class="brand-logo">&nbsp;<img alt="Brand" src="../public/images/logo/logo-gb-tp.png"></a>
               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
               <ul class="right hide-on-med-and-down">
+
+                <%if (user){%>
                 <li><a href="/profile"><i class="mdi-action-perm-identity">Account</i></a></li>
-                <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity">Login</i></a></li>
+                <%}%>
+
+                <%if (!user){%>
+                <li id="login-button"><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity">Login</i></a></li>
+                <%}else{%>
+                <li id="logout-button"><a href="/logout"><i class="mdi-action-perm-identity">Logout</i></a></li>
+                <%}%>
 
               </ul>
               <ul class="side-nav" id="mobile-demo">

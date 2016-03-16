@@ -50,13 +50,29 @@ app.use(flash())
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
-//root route
-app.get('/gifts', function(req,res){
-	res.render('gifts')
+app.get('/what', function(req, res){
+	console.log(req.query);
+	res.send('<h1>sup?' +req.query.name+ '</h1>')
 })
 
+//root route
+app.get('/gifts', function(req,res){
+	console.log(req.query);
+
+	res.render('gifts', {user: req.user })
+})
+//
+// app.use(function (req,res,next) {
+//   if (req.isAuthenticated()) {
+// 		return next()
+// 	}else{
+// 		req.user = {}
+// 		return next()
+// 	}
+// })
+
 app.get('/', function(req,res){
-	res.render('start')
+	res.render('start', {user: req.user })
 })
 
 // user routes
