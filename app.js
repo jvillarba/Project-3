@@ -71,9 +71,9 @@ app.get('/gifts', function(req,res){
 // 	}
 // })
 
-app.get('/', function(req,res){
-	res.render('start', {user: req.user })
-})
+// app.get('/', function(req,res){
+// 	res.render('start', {user: req.user })
+// })
 
 // user routes
 app.use('/', userRoutes)

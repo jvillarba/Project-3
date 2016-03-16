@@ -103,17 +103,29 @@ h1{
       });
     })
 
+
+
   var $checkout = $('#checkout')
     $checkout.on('click',function() {
       console.log("checkout clicked");
-      //ajax that adds order to the database
-      $.ajax({
-        url: "/orders/"+ user._id, // how do I get the id?
-        method: 'POST',
-        body: productIDs // does this array work as body, is it the same as req.body???
-      }).done(function(data) {
-        // modal for checkout that pulls from the database and makes a new API req.
-      });
+      var order = {
+        product1: productIDs[0],
+        product2: productIDs[1],
+        product3: productIDs[2],
+        product4: productIDs[3],
+      }
+      if (user) {
+        $.ajax({
+          url: "/orders/"+ user._id, // how do I get the id?
+          method: 'POST',
+          data: order // does this array work as body, is it the same as req.body???
+        }).done(function(data) {
+          // modal for checkout that pulls from the database and makes a new API req.
+        });
+      }else {
+        window.location = '/login?product1=' + productIDs[0] +'&'+ '/login?product2=' + productIDs[1] +'&'+ '/login?product3=' + productIDs[2] +'&'+ '/login?product4=' + productIDs[3]
+      }
+
 
     })
 

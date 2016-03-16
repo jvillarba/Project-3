@@ -37,25 +37,24 @@ module.exports = {
   update: function(req,res){
     console.log("update request recieved");
     console.log(req.params.id);
-    res.render({user: req.user})
-    // Order.findOne({_id: req.params.id}, req.body, {new: true}).upsert().update(function(err, order){
-    //
-    //   if(err) return console.log(err)
-    //
-    //   // for (var i = 0; i < req.body.length; i++) {
-    //   //   Oder.product/*how do I concat a number*/ = req.body[i]
-    //   // }
-    //   Order.product1 = req.body[0]
-    //   Order.product2 = req.body[1]
-    //   Order.product3 = req.body[2]
-    //   Order.product4 = req.body[3]
-    //
-    //   order.save(function(err, order){
-    //     if(err) return console.log(err)
-    //     res.json({success: true, updatedOrder: order})
-    //   })
-    //
-    // })
+    Order.findOne({_id: req.params.id}, req.body, {new: true}).upsert().update(function(err, order){
+
+      if(err) return console.log(err)
+
+      // for (var i = 0; i < req.body.length; i++) {
+      //   Oder.product/*how do I concat a number*/ = req.body[i]
+      // }
+      Order.product1 = req.body[0]
+      Order.product2 = req.body[1]
+      Order.product3 = req.body[2]
+      Order.product4 = req.body[3]
+
+      order.save(function(err, order){
+        if(err) return console.log(err)
+        res.json({success: true, updatedOrder: order})
+      })
+
+    })
   }, //end update
   destroy: function(req,res){
   	Order.findOneAndRemove({_id: req.params.id}, function(err){
