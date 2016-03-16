@@ -18,6 +18,8 @@ var
 	request				 = require('request'),
 	bodyParser     = require('body-parser');
 
+require('dotenv').config();
+
 app.use("/public", express.static(path.join(__dirname, 'public')))
 
 // environment port
