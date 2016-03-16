@@ -10,7 +10,7 @@ var orderSchema = new mongoose.Schema({
   product2: String,
   product3: String,
   product4: String,
-  _by: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+  _by: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 
 })
 

@@ -4,11 +4,11 @@ var
   orderRouter = express.Router(),
   orderCtrl   = require('../controllers/orders.js')
 
-  orderRouter.route('/orders')
-    .get(orderCtrl.index)
-    .post(orderCtrl.create)
-
   orderRouter.route('/users/:id/orders')
+    .get(orderCtrl.index)
+    .post(orderCtrl.createOrder)
+
+  orderRouter.route('/users/:id/orders/:orderId')
     .patch(orderCtrl.update)
     .get(orderCtrl.show)
     .delete(orderCtrl.destroy)
