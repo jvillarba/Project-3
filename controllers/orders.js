@@ -16,7 +16,7 @@ module.exports = {
     })
   },
   createOrder: function(req,res){
-    User.findOne({_id: req.params.id}, function(err, user){
+    User.findOne({_id: user._id}, function(err, user){
       if(err) throw err
 
       //create and save meme
@@ -33,18 +33,19 @@ module.exports = {
 
     })
   }, //create function
-
-
   update: function(req,res){
-  Order.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, order){
-    if(err) return console.log(err)
-    order.save(function(err, order){
+    Order.findOne({_id: req.params.id}, req.body, {new: true}).upsert().update(function(err, order){
+
       if(err) return console.log(err)
-      res.json({success: true, updatedOrder: order})
+
+      order.save(function(err, order){
+        if(err) return console.log(err)
+        res.json({success: true, updatedOrder: order})
+      })
+
     })
-  })
-}, //end update
-destroy: function(req,res){
+  }, //end update
+  destroy: function(req,res){
   	Order.findOneAndRemove({_id: req.params.id}, function(err){
   		if(err) return console.log(err)
   		res.json({success: true, message: "Order was deleted"})

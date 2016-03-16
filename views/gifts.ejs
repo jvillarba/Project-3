@@ -77,6 +77,17 @@
           }
           $('#total-price').text('$'+(Math.ceil(totalPrice+10)))
       });
+  })
+
+  var $checkout = $('#checkout')
+    $checkout.on('click',function() {
+
+      $.ajax({
+        url: "/orders/id",
+        method: 'PUT'
+      }).done(function(data) {
+        
+      });
 
   })
 
