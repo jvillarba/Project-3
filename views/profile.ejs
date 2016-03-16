@@ -1,11 +1,87 @@
 <div class="page-header">
 
-    <h1><%= user.local.name || user.facebook.name %></h1>
+    <h3><%= user.local.name || user.facebook.name %>'s GiftBot Account</h3>
 
-    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s2"><a class="active" href="#profile">Profile</a></li>
+            <li class="tab col s2"><a href="#billing">Billing</a></li>
+            <li class="tab col s2"><a href="#purchase">Purchases</a></li>
+            <li class="tab col s2 disabled"><a href="#test4"></a></li>
+            <li class="tab col s2 disabled"><a href="#test5"></a></li>
+            <li class="tab col s2 disabled"><a href="#test6"></a></li>
+          </ul>
+        </div>
+        <div id="profile" class="col s12" style="text-align: left">
+            <!-- <h3>Profile</h3> -->
+            <div class="row">
+                <div class="col s6">
+                    <h6 class="mdi-action-account-box">Name</h6>
+                    <p><%= user.local.name || user.facebook.name %></p>
+                </div>
+                <div class="col s6">
+                    <h6 class="mdi-hardware-phone-android">Phone Number</h6>
+                    <p>+91 9912776151</p>
+                </div>
+                <div class="col s12 profile">
+                    <h6 class="mdi-action-home">Address</h6>
+                    <p>1234 Street, Santa Monica, CA 90401</p>
+                </div>
+                <div class="col s12">
+                    <h6 class="mdi-content-mail">Email</h6>
+                    <p><%= user.local.email || user.facebook.email %></p>
+                </div>
+                <div class="col s12">
+                  <h6 class="mdi-action-lock">Password</h6>
+                  <p><%= user.local.password || user.facebook.token %></p>
+                </div>
 
+            </div>
+            <p style="text-align: center">
+                <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
+            </p>
+        </div>
+        <div id="billing" class="col s12" style="text-align: left">
+          <!-- <h3>Billing</h3> -->
+            <div class="row">
+                <div class="col s6">
+                    <h6 class="mdi-action-credit-card">Credit Card Number</h6>
+                    <p>1234 1234 1234 1234</p>
+                </div>
+                <div class="col s4">
+                    <h6>Exp. Date (MM/YY)</h6>
+                    <p>MM/YY</p>
+                </div>
+                <div class="col s2">
+                    <h6>CVV</h6>
+                    <p>1234</p>
+                </div>
+                <div class="col s12">
+                    <h6 class="mdi-action-account-box">Name</h6>
+                    <p><%= user.local.name || user.facebook.name %></p>
+                </div>
+                <div class="col s12 profile">
+                    <h6 class="mdi-action-home">Address</h6>
+                    <p>1234 Street, Santa Monica, CA 90401</p>
+                </div>
+            </div>
+            <p style="text-align: center">
+                <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
+            </p>
+        </div>
+    </div>
 </div>
-<div class="row">
+      <!-- <div id="test4" class="col s12">Test 4</div> -->
+  <!-- </div>
+
+<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+</div> -->
+<script type="text/javascript">
+  var user = <%-JSON.stringify(user)%>
+</script>
+<!-- <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
         <div class="well">
           <% if(user.local.name) { %>
@@ -29,4 +105,4 @@
             <% } %>
         </div>
     </div>
-</div>
+</div> -->

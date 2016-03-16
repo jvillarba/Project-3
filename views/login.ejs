@@ -1,13 +1,8 @@
-<!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Login</h4>
-      <p>A bunch of text</p>
+<div class="col-sm-6 col-sm-offset-3">
+    <h1>Login</h1>
 
     <% if(message.length > 0) { %>
-      <div class="alert alert-danger">
-        <%= message %>
-      </div>
+    <div class="alert alert-danger"><%= message %></div>
     <% } %>
 
     <form action="/login" method="post">
@@ -20,22 +15,43 @@
             <input type="password" class="form-control" name="password">
         </div>
 
-        <!-- <button type="submit" class="btn btn-info btn-lg">Login</button> -->
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-        </button>
+        <input id="p1" type="hidden" name="product1" value="">
+        <input id="p2" type="hidden" name="product2" value="">
+        <input id="p3" type="hidden" name="product3" value="">
+        <input id="p4" type="hidden" name="product4" value="">
+
+        <button type="submit" class="btn btn-info btn-lg">Login</button>
     </form>
 
-    <!-- <hr> -->
+    <hr>
 
-    <h4>Or Login With <a href="/auth/facebook" class="waves-effect waves-light btn indigo darken-2">Facebook</a></h4>
+    <h3>Or Login With <a href="/auth/facebook" class="btn indigo darken-2">Facebook</a></h3>
 
-  <p>Or, <a href="/signup">Signup</a></p>
-  <p>Go back <a href="/">home</a>.</p>
+    <p>Or, <a href="/signup">Signup</a></p>
+    <p>Go back <a href="/">home</a>.</p>
 
 </div>
-</div>
-<div class="modal-footer">
-  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-</div>
-</div>
+
+<script>
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  url = url.toLowerCase(); // This is just to avoid case sensitiveness
+  name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+if(getParameterByName('product1')){
+  // $('#p1').val(getParameterByName('product1'))
+  // $('#p2').val(getParameterByName('product2'))
+  // $('#p3').val(getParameterByName('product3'))
+  // $('#p4').val(getParameterByName('product4'))
+  sessionStorage.setItem('product1', getParameterByName('product1'));
+  sessionStorage.setItem('product2', getParameterByName('product2'));
+  sessionStorage.setItem('product3', getParameterByName('product3'));
+  sessionStorage.setItem('product4', getParameterByName('product4'));
+}
+</script>

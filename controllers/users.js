@@ -19,6 +19,7 @@ module.exports = {
 
   // SHOW single users
   show: function(req, res){
+    console.log(req.body)
     User.findOne({_id: req.params.id}, function(err, users){
       if(err) return console.log(err)
       res.json(users)
@@ -29,7 +30,7 @@ module.exports = {
   destroy: function(req, res){
     User.findOneAndRemove({_id: req.params.id}, function(err){
       if(err) return console.log(err)
-      res.json({success: true, message: "User deleted", user})
+      res.json({success: true, message: "User deleted"})
     })
   },
 
@@ -37,7 +38,6 @@ module.exports = {
   update: function(req, res){
     User.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, user){
       if(err) return console.log(err)
-      user.completed = !user.completed
       user.save(function(err, user){
         if(err) return console.log(err)
         res.json({success: true, updatedUser: user})

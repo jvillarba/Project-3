@@ -1,3 +1,4 @@
+require('dotenv').config();
 var
 	express				 = require('express'),
 	app 					 = express(),
@@ -13,20 +14,23 @@ var
 	passportConfig = require('./config/passport.js'),
 	userRoutes 		 = require('./routes/users.js'),
 	apiRoutes 		 = require('./routes/api.js'),
-	orderRoutes 	= require('./routes/orders.js'),
+	orderRoutes 	 = require('./routes/orders.js'),
 	path 					 = require('path'),
 	request				 = require('request'),
 	bodyParser     = require('body-parser');
+
 
 app.use("/public", express.static(path.join(__dirname, 'public')))
 
 // environment port
 var port = process.env.PORT || 3000
 
+// connect to MLAB (mongo db)
+var DB_URL = process.env.MLAB_LINK || 'mongodb://localhost/gift-db'
 // mongoose connection
-mongoose.connect('mongodb://localhost/gift-db', function(err){
+mongoose.connect(DB_URL, function(err){
 	if(err) return console.log('Cannot connect :(')
-	console.log('Connected to MongoDB. Sweet! (gift-db)')
+	console.log('Connected to MongoDB. Sweet!', DB_URL)
 })
 
 // middleware
@@ -46,10 +50,30 @@ app.use(flash())
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
-//root route
-app.get('/', function(req,res){
-	res.render('roulette')
+app.get('/what', function(req, res){
+	console.log(req.query);
+	res.send('<h1>sup?' +req.query.name+ '</h1>')
 })
+
+//root route
+app.get('/gifts', function(req,res){
+	console.log(req.query);
+
+	res.render('gifts', {user: req.user })
+})
+//
+// app.use(function (req,res,next) {
+//   if (req.isAuthenticated()) {
+// 		return next()
+// 	}else{
+// 		req.user = {}
+// 		return next()
+// 	}
+// })
+
+// app.get('/', function(req,res){
+// 	res.render('start', {user: req.user })
+// })
 
 // user routes
 app.use('/', userRoutes)
