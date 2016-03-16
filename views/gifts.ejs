@@ -2,6 +2,9 @@
 .progress{
   background-color: #ffcc80
 }
+h1{
+  font-family: 'Candal', sans-serif;
+}
 </style>
 
 
@@ -73,10 +76,12 @@
 
 <script type="text/javascript">
     $( ".progress" ).hide(); //hide load bar
+      $( "#checkout" ).hide(); //hide checkout button
 
   var $spin = $('#spin')
     $spin.on('click',function() {
          $( ".progress" ).show(); //show load bar
+           $( "#checkout" ).show(); //show checkout button
 
       $.ajax({
         url: "/api",
@@ -90,7 +95,7 @@
             totalPrice += data[i-1].salePrice
             console.log(data[i-1]);
           }
-          $('#total-price').text('$'+(Math.ceil(totalPrice+10)))
+          $('#total-price').text('$'+(Math.ceil(totalPrice-15)))
       });
 
   })
