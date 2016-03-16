@@ -5,22 +5,31 @@
 h1{
   font-family: 'Candal', sans-serif;
 }
+h5{
+  font-family: 'Martel Sans', sans-serif;
+}
 </style>
 
 
 <h1 class="text-center">Start Gift Bot</h1>
+<h5>Find the perfectly random gift bundle</h5>
+
+<!-- load bar -->
+<div style="height:20px">
+    <div class="progress">
+          <div class="indeterminate orange darken-1"></div>
+    </div>
+</div>
 
 <div class="row" style="height:350px">
 
-<!-- load bar -->
-<div class="progress">
-      <div class="indeterminate orange darken-1"></div>
-</div>
+
+
 
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-1" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-1" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
         <p id="name-1"></p>
       </div>
     </div>
@@ -29,7 +38,7 @@ h1{
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-2" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-2" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
         <p id="name-2"></p>
       </div>
     </div>
@@ -38,7 +47,7 @@ h1{
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-3" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-3" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
         <p id="name-3"></p>
       </div>
     </div>
@@ -47,7 +56,7 @@ h1{
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-4" src="https://i5.walmartimages.com/dfw/dce07b8c-52bd/k2-_ae3be777-76da-4d15-bc69-5d449589a4ef.v6.jpg" alt="" />
+        <img id="box-4" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
         <p id="name-4"></p>
       </div>
     </div>
@@ -77,7 +86,7 @@ h1{
 <script type="text/javascript">
 
   var productIDs = []
-  
+
   $( ".progress" ).hide(); //hide load bar
   $( "#checkout" ).hide(); //hide checkout button
 
@@ -91,7 +100,7 @@ h1{
         method: 'GET'
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
-          var totalPrice = 0
+          var totalPrice = 0 //add price of all products
           for (var i = 1; i < 5; i++) {
             $('#box-'+i).attr('src', data[i-1].mediumImage);
             $('#name-'+i).text(data[i-1].name);
