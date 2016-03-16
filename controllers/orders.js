@@ -16,22 +16,23 @@ module.exports = {
     })
   },
   createOrder: function(req,res){
-    console.log(user._id);
-    // User.findOne({_id: user._id}, function(err, user){
-    //   if(err) throw err
-    //
-    //   //create and save meme
-    //   var newOrder = new Order(req.body)
-    //   newOrder._by = user
-    //   newOrder.save(function(err, order){
-    //     user.orders.push(order)
-    //     user.save(function(err, user){
-    //       if(err) throw err
-    //       res.json(user)
-    //     })
-    //   })
-    //
-    // })
+    console.log(req.params.id);
+    User.findOne({_id: req.params.id}, function(err, user){
+      if(err) throw err
+
+      //create and save meme
+      var newOrder = new Order(req.body)
+      newOrder._by = user
+      newOrder.save(function(err, order){
+        console.log("this is the order", order);
+        user.orders.push(order)
+        user.save(function(err, user){
+          if(err) throw err
+          res.json(user)
+        })
+      })
+
+    })
   }, //create function
   update: function(req,res){
     console.log("update request recieved");

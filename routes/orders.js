@@ -9,6 +9,7 @@ orderRouter.route('/orders')
   .post(orderCtrl.createOrder)
 
 orderRouter.route('/orders/:id', isLoggedIn)
+  .post(orderCtrl.createOrder)
   .put(orderCtrl.update)
   .get(orderCtrl.show)
   .delete(orderCtrl.destroy)

@@ -83,14 +83,14 @@ h1{
 
   var $spin = $('#spin')
     $spin.on('click',function() {
-         $( ".progress" ).show(); //show load bar
-           $( "#checkout" ).show(); //show checkout button
+      $( ".progress" ).show(); //show load bar
 
       $.ajax({
         url: "/api",
         method: 'GET'
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
+          $( "#checkout" ).show(); //show checkout button
           var totalPrice = 0
           for (var i = 1; i < 5; i++) {
             $('#box-'+i).attr('src', data[i-1].mediumImage);
@@ -105,9 +105,10 @@ h1{
 
   var $checkout = $('#checkout')
     $checkout.on('click',function() {
-
+      console.log("checkout clicked");
+      //ajax that adds order to the database
       $.ajax({
-        url: "/orders", // how do I get the id?
+        url: "/orders/"+ user._id, // how do I get the id?
         method: 'POST',
         body: productIDs // does this array work as body, is it the same as req.body???
       }).done(function(data) {
