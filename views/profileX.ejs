@@ -1,0 +1,32 @@
+<div class="page-header">
+
+    <h1><%= user.local.name || user.facebook.name %></h1>
+
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+</div>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="well">
+          <% if(user.local.name) { %>
+            <h3>Locally Stored User</h3>
+
+            <p>
+                <strong>Name</strong>: <%= user.local.name %><br>
+                <strong>id</strong>: <%= user._id %><br>
+                <strong>email</strong>: <%= user.local.email %><br>
+                <strong>password</strong>: <%= user.local.password %>
+            </p>
+          <% }else{ %>
+            <h3>Facebook User</h3>
+
+            <p>
+                <strong>Name</strong>: <%= user.facebook.name %><br>
+                <strong>id</strong>: <%= user.facebook.id %><br>
+                <strong>email</strong>: <%= user.facebook.email %><br>
+                <strong>token</strong>: <%= user.facebook.token %>
+            </p>
+            <% } %>
+        </div>
+    </div>
+</div>

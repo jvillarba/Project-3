@@ -14,7 +14,7 @@ var
 	passportConfig = require('./config/passport.js'),
 	userRoutes 		 = require('./routes/users.js'),
 	apiRoutes 		 = require('./routes/api.js'),
-	orderRoutes 	= require('./routes/orders.js'),
+	orderRoutes 	 = require('./routes/orders.js'),
 	path 					 = require('path'),
 	request				 = require('request'),
 	bodyParser     = require('body-parser');
