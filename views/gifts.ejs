@@ -78,19 +78,29 @@ h1{
 
   var productIDs = []
 
+  // Get saved data from sessionStorage
+  productIDs[0] = sessionStorage.getItem('product1');
+  productIDs[1] = sessionStorage.getItem('product2');
+  productIDs[2] = sessionStorage.getItem('product3');
+  productIDs[3] = sessionStorage.getItem('product4');
+
   $( ".progress" ).hide(); //hide load bar
   $( "#checkout" ).hide(); //hide checkout button
 
+
+
   var $spin = $('#spin')
     $spin.on('click',function() {
-        $( ".progress" ).show(); //show load bar
-        $( "#checkout" ).show(); //show checkout button
+
+      $( ".progress" ).show(); //show load bar
+      $( "#checkout" ).show(); //show checkout button
 
       $.ajax({
         url: "/api",
         method: 'GET'
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
+          $( "#checkout" ).show(); //show checkout button
           var totalPrice = 0
           for (var i = 1; i < 5; i++) {
             $('#box-'+i).attr('src', data[i-1].mediumImage);
@@ -103,16 +113,29 @@ h1{
       });
     })
 
+
+
   var $checkout = $('#checkout')
     $checkout.on('click',function() {
+      console.log("checkout clicked");
+      var order = {
+        product1: productIDs[0],
+        product2: productIDs[1],
+        product3: productIDs[2],
+        product4: productIDs[3],
+      }
+      if (user) {
+        $.ajax({
+          url: "/orders/"+ user._id, // how do I get the id?
+          method: 'POST',
+          data: order // does this array work as body, is it the same as req.body???
+        }).done(function(data) {
+          // modal for checkout that pulls from the database and makes a new API req.
+        });
+      }else {
+        window.location = '/login?product1=' + productIDs[0] +'&'+ '/login?product2=' + productIDs[1] +'&'+ '/login?product3=' + productIDs[2] +'&'+ '/login?product4=' + productIDs[3]
+      }
 
-      $.ajax({
-        url: "/orders", // how do I get the id?
-        method: 'POST',
-        body: productIDs // does this array work as body, is it the same as req.body???
-      }).done(function(data) {
-        // modal for checkout that pulls from the database and makes a new API req.
-      });
 
     })
 

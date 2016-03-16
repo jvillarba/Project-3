@@ -19,6 +19,7 @@ module.exports = {
 
   // SHOW single users
   show: function(req, res){
+    console.log(req.body)
     User.findOne({_id: req.params.id}, function(err, users){
       if(err) return console.log(err)
       res.json(users)
