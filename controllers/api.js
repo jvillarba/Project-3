@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var Path = require('path');
 var request = require('request');
 var catList = ["2636","3920","3920_582507_583874", "4044_133012_1045881",
@@ -5,8 +7,6 @@ var catList = ["2636","3920","3920_582507_583874", "4044_133012_1045881",
   "4104", "4171_4191", "4096","4125_4161","1085632_1229464",
   "4171_1015079"]
 var mathRan = function (){return (Math.floor(Math.random() * (catList.length - 0)) + 0)}
-
-// var url = "http://api.walmartlabs.com/v1/paginated/items?format=json&category="+ catList[mathRan()]+"&apiKey=frt6ajvkqm4aexwjksrukrey"
 
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
 
     var catArray = []
     for (var i = 0; i < 4; i++) {
-      catArray[i] = "http://api.walmartlabs.com/v1/paginated/items?format=json&category="+ catList[mathRan()]+"&apiKey=frt6ajvkqm4aexwjksrukrey"
+      catArray[i] = "http://api.walmartlabs.com/v1/paginated/items?format=json&category="+ catList[mathRan()]+"&apiKey="+process.env.WALMART_API_KEY
     }
 
     var data = []
