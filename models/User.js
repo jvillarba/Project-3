@@ -9,16 +9,16 @@ var userSchema = new Schema({
   local: {
     name: String,
     email: String,
-    password: String,
-    //_order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
+    password: String
+
   },
   facebook: {
     id: String,
     name: String,
     token: String,
-    email: String,
-    //_order: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
-  }
+    email: String
+  },
+    orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
 })
 
 userSchema.methods.generateHash = function(password) {
