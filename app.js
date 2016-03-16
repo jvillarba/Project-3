@@ -51,8 +51,12 @@ app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
 //root route
+app.get('/gifts', function(req,res){
+	res.render('gifts')
+})
+
 app.get('/', function(req,res){
-	res.render('roulette')
+	res.render('start')
 })
 
 // user routes
