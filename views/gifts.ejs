@@ -1,3 +1,4 @@
+<!-- Dan Need to create different buttons (30, 50, 100) -->
 <style>
 .progress{
   background-color: #ffcc80
@@ -86,6 +87,7 @@ h5{
 <script type="text/javascript">
 
   var productIDs = []
+  var moneySetter = 200;
 
   // Get saved data from sessionStorage
   productIDs[0] = sessionStorage.getItem('product1');
@@ -97,7 +99,7 @@ h5{
   $( "#checkout" ).hide(); //hide checkout button
 
 
-  var moneySetter = 25;
+
   var $spin = $('#spin')
 
     $spin.on('click',function() {
@@ -110,6 +112,7 @@ h5{
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
           $( "#checkout" ).show(); //show checkout button
+          console.log(moneySetter)
 
           var totalPrice = 0 //add price of all products
 

@@ -27,7 +27,7 @@ module.exports = {
       var randoItem = []
       var randoTwenyFive = []
       for (var i = 0; i < body.items.length; i++) {
-        if (body.items[i].salePrice <= 100){  //priceB
+        if (body.items[i].salePrice <= body.data){  //body.data is the moneySetter var from gifts view
           randoTwenyFive.push(body.items[i])
         }
           randoItem = randoTwenyFive[mathRan2()]
@@ -39,7 +39,7 @@ module.exports = {
         var randoItem = []
         var randoTwenyFive = []
         for (var i = 0; i < body.items.length; i++) {
-          if (body.items[i].salePrice <= body.data){
+          if (body.items[i].salePrice <= body.data){ //body.data is the moneySetter var from gifts view
             randoTwenyFive.push(body.items[i])
           }
             randoItem = randoTwenyFive[mathRan2()]
@@ -51,7 +51,7 @@ module.exports = {
           var randoItem = []
           var randoTwenyFive = []
           for (var i = 0; i < body.items.length; i++) {
-            if (body.items[i].salePrice <= 100){
+            if (body.items[i].salePrice <= body.data){//body.data is the moneySetter var from gifts view
               randoTwenyFive.push(body.items[i])
             }
               randoItem = randoTwenyFive[mathRan2()]
@@ -63,7 +63,7 @@ module.exports = {
             var randoItem = []
             var randoTwenyFive = []
             for (var i = 0; i < body.items.length; i++) {
-              if (body.items[i].salePrice <= 100){
+              if (body.items[i].salePrice <= body.data){//body.data is the moneySetter var from gifts view
                 randoTwenyFive.push(body.items[i])
               }
                 randoItem = randoTwenyFive[mathRan2()]
