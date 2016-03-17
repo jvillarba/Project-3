@@ -160,7 +160,6 @@ h5{
         method: 'POST',
         data: order // does this array work as body, is it the same as req.body???
       }).done(function(data) {
-<<<<<<< HEAD
           $( ".progress" ).hide(); //hide load bar
           $( "#checkout" ).show(); //show checkout button
 
@@ -174,9 +173,6 @@ h5{
             productIDs[i-1] = data[i-1].itemId
           }
           $('#total-price').text('$'+(Math.ceil(totalPrice)))
-=======
-        // modal for checkout that pulls from the database and makes a new API req.
->>>>>>> master
       });
     }else {
       // window.location = '/login?product1=' +productIDs[0]+'&product2='+productIDs[1]+'&product3='+productIDs[2]+'&product4='+productIDs[3]+'&image1='+images[0]+'&image2='+images[1]+'&image3='+ images[2]+'&image4='+ images[3]+'&price1='+ prices[0]+'&price2='+ prices[1]+'&price3='+ prices[2]
