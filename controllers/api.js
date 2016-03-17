@@ -17,7 +17,7 @@ module.exports = {
 
 //show api
   show: function(req,res){ //for home page
-
+    
     var catArray = []
     for (var i = 0; i < 4; i++) {
       catArray[i] = "http://api.walmartlabs.com/v1/paginated/items?format=json&category="+ catList[mathRan()]+"&apiKey="+process.env.WALMART_API_KEY
