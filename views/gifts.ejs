@@ -1,159 +1,97 @@
-<!-- Dan Need to create different buttons (30, 50, 100) -->
-<style>
-.progress{
-  background-color: #ffcc80
-}
-h1{
-  font-family: 'Candal', sans-serif;
-}
-h5{
-  font-family: 'Martel Sans', sans-serif;
-}
-</style>
-
-
-<h1 class="text-center">Start Gift Bot</h1>
-<h5>Find the perfectly random gift bundle</h5>
-
-<!-- load bar -->
-<div style="height:20px">
-    <div class="progress">
-          <div class="indeterminate orange darken-1"></div>
-    </div>
-</div>
-
-<div class="row" style="height:350px">
-
-
-
-
-  <div class="col s12 m6 l3">
-    <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-1" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
-        <p id="name-1"></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s12 m6 l3">
-    <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-2" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
-        <p id="name-2"></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s12 m6 l3">
-    <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-3" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
-        <p id="name-3"></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s12 m6 l3">
-    <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-4" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="200" width="200" />
-        <p id="name-4"></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row center-align">
-  <h5 id="bundle">SPIN TO FIND BUNDLE </h5>
-  <h3 id="total-price"></h3>
-<!-- </div>
-
-<div class="row center-align"> -->
-
-  <div>
-    <button id="spin" type="button" class="btn  orange darken-1">SPIN!</button>
-  </div>
-  <br>
-
-  <div>
-    <button id="checkout" type="button" class="btn  red accent-4">Checkout</button>
-  </div>
-
-</div>
-
-
-
 <script type="text/javascript">
 
-  var productIDs = []
-  //var moneySetter = 200; tabled functionality for price buttons
-
-  // Get saved data from sessionStorage
-  productIDs[0] = sessionStorage.getItem('product1');
-  productIDs[1] = sessionStorage.getItem('product2');
-  productIDs[2] = sessionStorage.getItem('product3');
-  productIDs[3] = sessionStorage.getItem('product4');
-
+  var user = user
   $( ".progress" ).hide(); //hide load bar
   $( "#checkout" ).hide(); //hide checkout button
   $( "#total-price" ).hide(); //hide checkout button
 
-
-
   var $spin = $('#spin')
-
-    $spin.on('click',function() {
-        $( ".progress" ).show(); //show load bar
-
-      $.ajax({
-        url: "/api",
-        method: 'GET'
-      }).done(function(data) {
-          $( ".progress" ).hide(); //hide load bar
-          $( "#checkout" ).show(); //show checkout button
-          $( "#total-price" ).show(); //hide checkout button
-          $("#bundle").text("BUY BUNDLE NOW");
-
-
-          var totalPrice = 0 //add price of all products
-
-          for (var i = 1; i < 5; i++) {
-            $('#box-'+i).attr('src', data[i-1].mediumImage);
-            $('#name-'+i).text(data[i-1].name);
-            totalPrice += data[i-1].salePrice
-            console.log(data[i-1]);
-            productIDs[i-1] = data[i-1].itemId
-          }
-          $('#total-price').text('$'+(Math.ceil(totalPrice)))
-      });
-    })
-
-
-
   var $checkout = $('#checkout')
-    $checkout.on('click',function() {
-      console.log("checkout clicked");
-      var order = {
-        product1: productIDs[0],
-        product2: productIDs[1],
-        product3: productIDs[2],
-        product4: productIDs[3],
-        totalPrice: moneySetter
-      }
-      if (user) {
-        $.ajax({
-          url: "/orders/"+ user._id, // how do I get the id?
-          method: 'POST',
-          data: order // does this array work as body, is it the same as req.body???
-        }).done(function(data) {
-          // modal for checkout that pulls from the database and makes a new API req.
-        });
+  var productIDs = []
+  var images = []
+  var savedTotalPrice = 0
+  //var moneySetter = 200; tabled functionality for price buttons
+
+  // Get saved data from sessionStorage
+  for (var i = 0; i < 4; i++) {
+    productIDs[i] = sessionStorage.getItem('product'+i+1);
+    images[i] = sessionStorage.getItem('image'+i+1);
+  }
+
+  if (productIDs[0]) {
+    $("#bundle").text("BUY BUNDLE NOW");
+    $( "#total-price" ).show();
+    $( "#checkout" ).text('CHECKOUT');
+    $( "#checkout" ).show(); //show checkout button
+
+    savedTotalPrice = sessionStorage.getItem('savedTotalPrice');
+    for (var i = 0; i < 4; i++) {
+      $('#box-'+(i+1)).attr('src', images[i]);
+      //$('#name-'+i).text(data[i-1].name);
+    }
+    console.log('total price', savedTotalPrice);
+    $('#total-price').text('$'+(Math.ceil(savedTotalPrice)))
+  }
+
+  $spin.on('click',function() {
+    $( ".progress" ).show(); //show load bar
+
+    $.ajax({
+      url: "/api",
+      method: 'GET'
+    }).done(function(data) {
+      $( ".progress" ).hide(); //hide load bar
+      $( "#total-price" ).show(); //hide checkout button
+      $("#bundle").text("BUY BUNDLE NOW");
+
+      console.log(user);
+      if (!user) {
+        $( "#checkout" ).text('log in to checkout'); //show checkout button
+        $( "#checkout" ).show(); //show checkout button
       }else {
-        window.location = '/login?product1=' + productIDs[0] +'&'+ '/login?product2=' + productIDs[1] +'&'+ '/login?product3=' + productIDs[2] +'&'+ '/login?product4=' + productIDs[3]
+        $( "#checkout" ).text('CHECKOUT');
+        $( "#checkout" ).show(); //show checkout button
       }
 
+      var totalPrice = 0 //add price of all products
 
-    })
+      for (var i = 1; i < 5; i++) {
+        $('#box-'+i).attr('src', data[i-1].mediumImage);
+        $('#name-'+i).text(data[i-1].name);
+        totalPrice += data[i-1].salePrice
+        //console.log(data[i-1]);
+        productIDs[i-1] = data[i-1].itemId
+        images[i-1] = data[i-1].mediumImage
+      }
+      savedTotalPrice = totalPrice
+      $('#total-price').text('$'+(Math.ceil(totalPrice)))
+    });
+  })
 
+  $checkout.on('click',function() {
+    console.log("checkout clicked");
+    var order = {
+      product1: productIDs[0],
+      product2: productIDs[1],
+      product3: productIDs[2],
+      product4: productIDs[3],
+      totalPrice: savedTotalPrice
+    }
+    if (user) {
+      $.ajax({
+        url: "/orders/"+ user._id,
+        method: 'POST',
+        data: order
+      }).done(function(data) {
+        window.location = '/checkout'
+      });
+    }else {
+      for (var i = 0; i < 4; i++) {
+        sessionStorage.setItem('product'+i+1, productIDs[i]);
+        sessionStorage.setItem('image'+i+1, images[i]);
+      }
+      sessionStorage.setItem('savedTotalPrice',savedTotalPrice)
+      window.location = '/login'
+    }
+  })
 </script>
