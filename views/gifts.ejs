@@ -105,7 +105,8 @@ h5{
   }
 
   if (productIDs[0]) {
-
+    $("#bundle").text("BUY BUNDLE NOW");
+    $( "#total-price" ).show();
     $( "#checkout" ).text('CHECKOUT');
     $( "#checkout" ).show(); //show checkout button
 
@@ -161,7 +162,7 @@ h5{
       product2: productIDs[1],
       product3: productIDs[2],
       product4: productIDs[3],
-      totalPrice: totalPrice
+      totalPrice: savedTotalPrice
     }
     if (user) {
       $.ajax({
@@ -169,13 +170,15 @@ h5{
         method: 'POST',
         data: order
       }).done(function(data) {
-        // modal for checkout that pulls from the database and makes a new API req.
+        window.location = '/checkout'
       });
     }else {
       for (var i = 0; i < 4; i++) {
         sessionStorage.setItem('product'+i+1, productIDs[i]);
         sessionStorage.setItem('image'+i+1, images[i]);
       }
+      sessionStorage.setItem('savedTotalPrice',savedTotalPrice)
+      window.location = '/login'
     }
   })
 </script>
