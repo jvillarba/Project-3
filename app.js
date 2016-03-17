@@ -10,7 +10,7 @@ var
 	cookieParser 	 = require('cookie-parser'),
 	bodyParser 		 = require('body-parser'),
 	session 			 = require('express-session'),
-	// passport 			 = require('passport'),
+	passport 			 = require('passport'),
 	passportConfig = require('./config/passport.js'),
 	userRoutes 		 = require('./routes/users.js'),
 	apiRoutes 		 = require('./routes/api.js'),
