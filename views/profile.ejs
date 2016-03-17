@@ -17,20 +17,20 @@
             <!-- <h3>Profile</h3> -->
             <div class="row">
                 <div class="col s6 card-panel grey lighten-5 z-depth-1" style="float: left">
-                    <p class="mdi-action-account-box">Name: <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
+                    <p class="mdi-action-account-box">NAME: <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
                 </div>
                 <div class="col s6 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-hardware-phone-android">Phone Number: <span style="font-weight: bold">+91 9912776151</span></p>
+                    <p class="mdi-hardware-phone-android">PHONE NUMBER: <span style="font-weight: bold">+91 9912776151</span></p>
                 </div>
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-home">Address: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
+                    <p class="mdi-action-home">ADDRESS: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
                 </div>
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-content-mail">Email: <span style="font-weight: bold"><%= user.local.email || user.facebook.email %></span></p>
+                    <p class="mdi-content-mail">EMAIL: <span style="font-weight: bold"><%= user.local.email || user.facebook.email %></span></p>
                 </div>
-                <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                <!-- <div class="col s12 card-panel grey lighten-5 z-depth-1">
                   <p class="mdi-action-lock">Password: <span style="font-weight: bold"><%= user.local.password || user.facebook.token %></span></p>
-                </div>
+                </div> -->
 
             </div>
             <!-- <div class="divider"></div> -->
@@ -42,24 +42,30 @@
           <!-- <h3>Billing</h3> -->
             <div class="row">
                 <div class="col s6 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-credit-card">Credit Card Number: <span style="font-weight: bold">1234 1234 1234 1234</span></p>
+                    <p class="mdi-action-credit-card">CREDIT CARD NUMBER: <span style="font-weight: bold">1234 1234 1234 1234</span></p>
                 </div>
                 <div class="col s4 card-panel grey lighten-5 z-depth-1">
-                    <p>Exp. Date (MM/YY): <span style="font-weight: bold">MM/YY</span></p>
+                    <p>EXP. DATE (MM/YY): <span style="font-weight: bold">MM/YY</span></p>
                 </div>
                 <div class="col s2 card-panel grey lighten-5 z-depth-1">
                     <p>CVV: <span style="font-weight: bold">1234</span></p>
                 </div>
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-account-box">Name: <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
+                    <p class="mdi-action-account-box">NAME (on card): <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
                 </div>
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-home">Address: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
+                    <p class="mdi-action-home">ADDRESS: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
                 </div>
                 <!-- <div class="divider"></div> -->
                 <p style="text-align: center">
                     <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
                 </p>
+            </div>
+        </div>
+        <div id="purchase" class="col s12" style="text-align: left">
+          <!-- <h3>Billing</h3> -->
+            <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                <p class="mdi-action-shopping-cart">PURCHASED: <span style="font-weight: bold">TBD</span></p>
             </div>
         </div>
     </div>
