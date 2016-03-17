@@ -9,16 +9,17 @@ var userSchema = new Schema({
   local: {
     name: String,
     email: String,
-    password: String
-
+    password: String,
+    phone: Number
   },
   facebook: {
     id: String,
     name: String,
     token: String,
-    email: String
+    email: String,
+    phone: Number
   },
-  address: [{type: mongoose.Schema.Types.ObjectId, ref: 'Address'}],
+  // address: [{type: mongoose.Schema.Types.ObjectId, ref: 'Address'}],
   orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}],
   credit: [{type: mongoose.Schema.Types.ObjectId, ref: 'Credit'}]
 })
