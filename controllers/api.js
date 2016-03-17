@@ -2,8 +2,8 @@ require('dotenv').config();
 
 var Path = require('path');
 var request = require('request');
-var catList = ["2636","3920","3920_582507_583874", "4044_133012_1045881",
-//"3944", "4171","2637_667479", "4171_1111647", "5438_426265_1032639",
+var catList = ["2636","3920","3920_582507_583874","4044_133224_1100911" , "4044_133224_1100911",
+//"3944", "4171","2637_667479", "4171_1111647", "5438_426265_1032639", "4044_133012_1045881"
   "4104", "4171_4191", "4096","4125_4161","1085632_1229464",
   "4171_1015079"]
 var mathRan = function (){return (Math.floor(Math.random() * (catList.length - 0)) + 0)}
@@ -27,7 +27,7 @@ module.exports = {
       var randoItem = []
       var randoTwenyFive = []
       for (var i = 0; i < body.items.length; i++) {
-        if (body.items[i].salePrice <= 25){
+        if (body.items[i].salePrice <= 100){  //priceB
           randoTwenyFive.push(body.items[i])
         }
           randoItem = randoTwenyFive[mathRan2()]
@@ -39,7 +39,7 @@ module.exports = {
         var randoItem = []
         var randoTwenyFive = []
         for (var i = 0; i < body.items.length; i++) {
-          if (body.items[i].salePrice <= 7){
+          if (body.items[i].salePrice <= 100){
             randoTwenyFive.push(body.items[i])
           }
             randoItem = randoTwenyFive[mathRan2()]
@@ -51,7 +51,7 @@ module.exports = {
           var randoItem = []
           var randoTwenyFive = []
           for (var i = 0; i < body.items.length; i++) {
-            if (body.items[i].salePrice <= 7){
+            if (body.items[i].salePrice <= 100){
               randoTwenyFive.push(body.items[i])
             }
               randoItem = randoTwenyFive[mathRan2()]
@@ -63,7 +63,7 @@ module.exports = {
             var randoItem = []
             var randoTwenyFive = []
             for (var i = 0; i < body.items.length; i++) {
-              if (body.items[i].salePrice <= 7){
+              if (body.items[i].salePrice <= 100){
                 randoTwenyFive.push(body.items[i])
               }
                 randoItem = randoTwenyFive[mathRan2()]
