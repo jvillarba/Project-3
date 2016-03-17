@@ -16,7 +16,9 @@ var creditSchema = new mongoose.Schema({
   number: Number,
   expDate: Date,
   name: String,
-  cvv: Number
+  cvv: Number,
+  address: String
+
 })
 
 var Credit = mongoose.model('Credit', creditSchema)

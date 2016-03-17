@@ -10,7 +10,6 @@ var userSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    address: String,
     phone: Number
   },
   facebook: {
