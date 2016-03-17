@@ -15,7 +15,7 @@ var mongoose = require('mongoose')
 var creditSchema = new mongoose.Schema({
   number: Number,
   expDate: Date,
-  name: String,
+  creditName: String,
   cvv: Number,
   address: String
 

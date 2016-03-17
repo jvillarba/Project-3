@@ -10,18 +10,32 @@ var userSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    phone: Number
+    phone: String,
+    credit: {
+      number: Number,
+      expDate: Date,
+      creditName: String,
+      cvv: Number,
+      address: String
+    }
   },
   facebook: {
     id: String,
     name: String,
     token: String,
     email: String,
-    phone: Number
+    phone: Number,
+    credit: {
+      number: Number,
+      expDate: Date,
+      creditName: String,
+      cvv: Number,
+      address: String
+    }
   },
   // address: [{type: mongoose.Schema.Types.ObjectId, ref: 'Address'}],
-  orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}],
-  credit: [{type: mongoose.Schema.Types.ObjectId, ref: 'Credit'}]
+  orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
+  // credit: [{type: mongoose.Schema.Types.ObjectId, ref: 'Credit'}]
 })
 
 userSchema.methods.generateHash = function(password) {
