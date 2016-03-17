@@ -65,8 +65,8 @@ h5{
 </div>
 
 <div class="row center-align">
-  <h5>BUY BUNDLE NOW </h5>
-  <h3 id="total-price">$50</h3>
+  <h5 id="bundle">SPIN TO FIND BUNDLE </h5>
+  <h3 id="total-price"></h3>
 <!-- </div>
 
 <div class="row center-align"> -->
@@ -97,6 +97,7 @@ h5{
 
   $( ".progress" ).hide(); //hide load bar
   $( "#checkout" ).hide(); //hide checkout button
+  $( "#total-price" ).hide(); //hide checkout button
 
 
 
@@ -111,6 +112,8 @@ h5{
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
           $( "#checkout" ).show(); //show checkout button
+          $( "#total-price" ).show(); //hide checkout button
+          $("#bundle").text("BUY BUNDLE NOW");
 
 
           var totalPrice = 0 //add price of all products
