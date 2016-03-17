@@ -1,3 +1,4 @@
+<!-- Dan Need to create different buttons (30, 50, 100) -->
 <style>
 .progress{
   background-color: #ffcc80
@@ -64,7 +65,7 @@ h5{
 </div>
 
 <div class="row center-align">
-  <h5>BUNDLE PRICE</h5>
+  <h5>BUY BUNDLE NOW </h5>
   <h3 id="total-price">$50</h3>
 <!-- </div>
 
@@ -86,6 +87,7 @@ h5{
 <script type="text/javascript">
 
   var productIDs = []
+  //var moneySetter = 200; tabled functionality for price buttons
 
   // Get saved data from sessionStorage
   productIDs[0] = sessionStorage.getItem('product1');
@@ -110,6 +112,7 @@ h5{
           $( ".progress" ).hide(); //hide load bar
           $( "#checkout" ).show(); //show checkout button
 
+
           var totalPrice = 0 //add price of all products
 
           for (var i = 1; i < 5; i++) {
@@ -133,6 +136,7 @@ h5{
         product2: productIDs[1],
         product3: productIDs[2],
         product4: productIDs[3],
+        totalPrice: moneySetter
       }
       if (user) {
         $.ajax({

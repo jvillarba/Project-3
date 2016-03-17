@@ -8,3 +8,6 @@ module.exports = {
     'profileFields': ['emails', 'displayName']
   }
 }
+
+// https://evening-depths-97156.herokuapp.com/auth/facebook/callback
+// http://localhost:3000/auth/facebook/callback

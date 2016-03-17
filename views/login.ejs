@@ -33,25 +33,5 @@
 </div>
 
 <script>
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  url = url.toLowerCase(); // This is just to avoid case sensitiveness
-  name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
 
-if(getParameterByName('product1')){
-  // $('#p1').val(getParameterByName('product1'))
-  // $('#p2').val(getParameterByName('product2'))
-  // $('#p3').val(getParameterByName('product3'))
-  // $('#p4').val(getParameterByName('product4'))
-  sessionStorage.setItem('product1', getParameterByName('product1'));
-  sessionStorage.setItem('product2', getParameterByName('product2'));
-  sessionStorage.setItem('product3', getParameterByName('product3'));
-  sessionStorage.setItem('product4', getParameterByName('product4'));
-}
 </script>
