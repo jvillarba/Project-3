@@ -11,6 +11,10 @@ var orderSchema = new mongoose.Schema({
   product3: String,
   product4: String,
   totalPrice: Number,
+  shippingAddress: String,
+  shipToName: String,
+  shipPhone: String,
+  message: String,
   _by: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 
 })
