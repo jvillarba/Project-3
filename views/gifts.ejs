@@ -1,3 +1,4 @@
+<!-- Dan Need to create different buttons (30, 50, 100) -->
 <style>
 .progress{
   background-color: #ffcc80
@@ -64,7 +65,7 @@ h5{
 </div>
 
 <div class="row center-align">
-  <h5>BUNDLE PRICE</h5>
+  <h5>BUY BUNDLE NOW </h5>
   <h3 id="total-price">$50</h3>
 <!-- </div>
 
@@ -76,7 +77,7 @@ h5{
   <br>
 
   <div>
-    <button id="checkout" type="button" class="btn  red accent-4">CHECKOUT hard</button>
+    <button id="checkout" type="button" class="btn  red accent-4">Checkout</button>
   </div>
 
 </div>
@@ -84,84 +85,33 @@ h5{
 
 
 <script type="text/javascript">
-  var user = user
+
+  var productIDs = []
+  //var moneySetter = 200; tabled functionality for price buttons
+
+  // Get saved data from sessionStorage
+  productIDs[0] = sessionStorage.getItem('product1');
+  productIDs[1] = sessionStorage.getItem('product2');
+  productIDs[2] = sessionStorage.getItem('product3');
+  productIDs[3] = sessionStorage.getItem('product4');
 
   $( ".progress" ).hide(); //hide load bar
   $( "#checkout" ).hide(); //hide checkout button
+
+
+
   var $spin = $('#spin')
-  var $checkout = $('#checkout')
-  var productIDs = []
-  var images = []
-  var savedTotalPrice = 0
 
-  // Get saved data from sessionStorage
-  for (var i = 0; i < 4; i++) {
-    productIDs[i] = sessionStorage.getItem('product'+i+1);
-    images[i] = sessionStorage.getItem('image'+i+1);
-  }
+    $spin.on('click',function() {
+        $( ".progress" ).show(); //show load bar
 
-  if (productIDs[0]) {
-
-    $( "#checkout" ).text('buttholes');
-    $( "#checkout" ).show(); //show checkout button
-
-    savedTotalPrice = sessionStorage.getItem('savedTotalPrice');
-    for (var i = 0; i < 4; i++) {
-      $('#box-'+(i+1)).attr('src', images[i]);
-      //$('#name-'+i).text(data[i-1].name);
-    }
-    console.log('total price', savedTotalPrice);
-    $('#total-price').text('$'+(Math.ceil(savedTotalPrice)))
-  }
-
-  $spin.on('click',function() {
-    $( ".progress" ).show(); //show load bar
-
-    $.ajax({
-      url: "/api",
-      method: 'GET'
-    }).done(function(data) {
-        $( ".progress" ).hide(); //hide load bar
-        console.log(user);
-        if (!user) {
-          $( "#checkout" ).text('log in to checkout'); //show checkout button
-          $( "#checkout" ).show(); //show checkout button
-        }else {
-          $( "#checkout" ).text('CHECKOUT');
-          $( "#checkout" ).show(); //show checkout button
-        }
-
-        var totalPrice = 0 //add price of all products
-
-        for (var i = 1; i < 5; i++) {
-          $('#box-'+i).attr('src', data[i-1].mediumImage);
-          $('#name-'+i).text(data[i-1].name);
-          totalPrice += data[i-1].salePrice
-          //console.log(data[i-1]);
-          productIDs[i-1] = data[i-1].itemId
-          images[i-1] = data[i-1].mediumImage
-        }
-        savedTotalPrice = totalPrice
-        $('#total-price').text('$'+(Math.ceil(totalPrice)))
-    });
-  })
-
-  $checkout.on('click',function() {
-    console.log("checkout clicked");
-    var order = {
-      product1: productIDs[0],
-      product2: productIDs[1],
-      product3: productIDs[2],
-      product4: productIDs[3],
-    }
-    if (user) {
       $.ajax({
-        url: "/orders/"+ user._id, // how do I get the id?
-        method: 'POST',
-        data: order // does this array work as body, is it the same as req.body???
+        url: "/api",
+        method: 'GET'
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
           $( "#checkout" ).show(); //show checkout button
+
 
           var totalPrice = 0 //add price of all products
 
@@ -174,17 +124,33 @@ h5{
           }
           $('#total-price').text('$'+(Math.ceil(totalPrice)))
       });
-    }else {
-      // window.location = '/login?product1=' +productIDs[0]+'&product2='+productIDs[1]+'&product3='+productIDs[2]+'&product4='+productIDs[3]+'&image1='+images[0]+'&image2='+images[1]+'&image3='+ images[2]+'&image4='+ images[3]+'&price1='+ prices[0]+'&price2='+ prices[1]+'&price3='+ prices[2]
-      for (var i = 0; i < 4; i++) {
-        sessionStorage.setItem('product'+i+1, productIDs[i]);
-        sessionStorage.setItem('image'+i+1, images[i]);
+    })
+
+
+
+  var $checkout = $('#checkout')
+    $checkout.on('click',function() {
+      console.log("checkout clicked");
+      var order = {
+        product1: productIDs[0],
+        product2: productIDs[1],
+        product3: productIDs[2],
+        product4: productIDs[3],
+        totalPrice: moneySetter
       }
-      sessionStorage.setItem('savedTotalPrice', savedTotalPrice)
-      window.location = '/login'
-    }
+      if (user) {
+        $.ajax({
+          url: "/orders/"+ user._id, // how do I get the id?
+          method: 'POST',
+          data: order // does this array work as body, is it the same as req.body???
+        }).done(function(data) {
+          // modal for checkout that pulls from the database and makes a new API req.
+        });
+      }else {
+        window.location = '/login?product1=' + productIDs[0] +'&'+ '/login?product2=' + productIDs[1] +'&'+ '/login?product3=' + productIDs[2] +'&'+ '/login?product4=' + productIDs[3]
+      }
 
 
-  })
+    })
 
 </script>
