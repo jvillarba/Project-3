@@ -58,6 +58,11 @@ userRouter.get('/profileEdit', isLoggedIn, function(req,res) {
   res.render('profileEdit', {user: req.user})
 })
 
+userRouter.get('/checkout', isLoggedIn, function(req,res) {
+  // render users profile only if they're logged in.
+  res.render('checkout', {user: req.user})
+})
+
 userRouter.get('/logout', function(req,res) {
   // destroy the session and redirect to the root.
   req.logout()
