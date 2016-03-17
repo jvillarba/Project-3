@@ -65,7 +65,7 @@ h5{
 </div>
 
 <div class="row center-align">
-  <h5>BUNDLE PRICE</h5>
+  <h5>BUY BUNDLE NOW </h5>
   <h3 id="total-price">$50</h3>
 <!-- </div>
 
@@ -87,7 +87,7 @@ h5{
 <script type="text/javascript">
 
   var productIDs = []
-  var moneySetter = 200;
+  //var moneySetter = 200; tabled functionality for price buttons
 
   // Get saved data from sessionStorage
   productIDs[0] = sessionStorage.getItem('product1');
@@ -107,12 +107,11 @@ h5{
 
       $.ajax({
         url: "/api",
-        method: 'GET',
-        data: moneySetter
+        method: 'GET'
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
           $( "#checkout" ).show(); //show checkout button
-          console.log(moneySetter)
+
 
           var totalPrice = 0 //add price of all products
 
