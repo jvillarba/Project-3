@@ -7,10 +7,7 @@ var catList = ["2636","3920","3920_582507_583874", "4044_133012_1045881",
   "4104", "4171_4191", "4096","4125_4161","1085632_1229464",
   "4171_1015079"]
 var mathRan = function (){return (Math.floor(Math.random() * (catList.length - 0)) + 0)}
-var fifty
-var seventyFive
-var oneHundred
-var twoHundred
+
 
 
 module.exports = {
@@ -26,23 +23,51 @@ module.exports = {
     var data = []
 
     request({url: catArray[0], json: true}, function(error, response, body){
-      var mathRan2 = function (){return (Math.floor(Math.random() * (body.items.length - 0)) + 0)}
-      var randoItem = body.items[mathRan2()]
+      var mathRan2 = function (){return (Math.floor(Math.random() * (randoTwenyFive.length - 0)) + 0)}
+      var randoItem = []
+      var randoTwenyFive = []
+      for (var i = 0; i < body.items.length; i++) {
+        if (body.items[i].salePrice <= 25){
+          randoTwenyFive.push(body.items[i])
+        }
+          randoItem = randoTwenyFive[mathRan2()]
+      }
       data.push(randoItem)
 
       request({url: catArray[1], json: true}, function(error, response, body){
-        var mathRan2 = function (){return (Math.floor(Math.random() * (body.items.length - 0)) + 0)}
-        var randoItem = body.items[mathRan2()]
+        var mathRan2 = function (){return (Math.floor(Math.random() * (randoTwenyFive.length - 0)) + 0)}
+        var randoItem = []
+        var randoTwenyFive = []
+        for (var i = 0; i < body.items.length; i++) {
+          if (body.items[i].salePrice <= 7){
+            randoTwenyFive.push(body.items[i])
+          }
+            randoItem = randoTwenyFive[mathRan2()]
+        }
         data.push(randoItem)
 
         request({url: catArray[2], json: true}, function(error, response, body){
-          var mathRan2 = function (){return (Math.floor(Math.random() * (body.items.length - 0)) + 0)}
-          var randoItem = body.items[mathRan2()]
+          var mathRan2 = function (){return (Math.floor(Math.random() * (randoTwenyFive.length - 0)) + 0)}
+          var randoItem = []
+          var randoTwenyFive = []
+          for (var i = 0; i < body.items.length; i++) {
+            if (body.items[i].salePrice <= 7){
+              randoTwenyFive.push(body.items[i])
+            }
+              randoItem = randoTwenyFive[mathRan2()]
+          }
           data.push(randoItem)
 
           request({url: catArray[3], json: true}, function(error, response, body){
-            var mathRan2 = function (){return (Math.floor(Math.random() * (body.items.length - 0)) + 0)}
-            var randoItem = body.items[mathRan2()]
+            var mathRan2 = function (){return (Math.floor(Math.random() * (randoTwenyFive.length - 0)) + 0)}
+            var randoItem = []
+            var randoTwenyFive = []
+            for (var i = 0; i < body.items.length; i++) {
+              if (body.items[i].salePrice <= 7){
+                randoTwenyFive.push(body.items[i])
+              }
+                randoItem = randoTwenyFive[mathRan2()]
+            }
             data.push(randoItem)
 
             res.json(data)
@@ -55,4 +80,4 @@ module.exports = {
 
 
 
- }
+} //end page exports
