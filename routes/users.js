@@ -15,6 +15,11 @@ userRouter.route('/users/:id')
   .get(userCtrl.show)
   .delete(userCtrl.destroy)
 
+userRouter.route('/users/:id')
+  .patch(userCtrl.update)
+  .get(userCtrl.show)
+  .delete(userCtrl.destroy)
+
 userRouter.route('/gifts')
   .get(function(req,res) {
     res.render('gifts', {user: req.user})
@@ -46,6 +51,11 @@ userRouter.route('/signup')
 userRouter.get('/profile', isLoggedIn, function(req,res) {
   // render users profile only if they're logged in.
   res.render('profile', {user: req.user})
+})
+
+userRouter.get('/profileEdit', isLoggedIn, function(req,res) {
+  // render users profile only if they're logged in.
+  res.render('profileEdit', {user: req.user})
 })
 
 userRouter.get('/logout', function(req,res) {

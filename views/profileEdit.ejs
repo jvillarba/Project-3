@@ -7,7 +7,7 @@
           <ul class="tabs">
             <li class="tab col s2"><a class="active" href="#test1">Profile</a></li>
             <li class="tab col s2"><a href="#test2">Billing</a></li>
-            <li class="tab col s2"><a href="#test3">Purchases</a></li>
+            <li class="tab col s2 disabled"><a href="#test4"></a></li>
             <li class="tab col s2 disabled"><a href="#test4"></a></li>
             <li class="tab col s2 disabled"><a href="#test5"></a></li>
             <li class="tab col s2 disabled"><a href="#test6"></a></li>
@@ -29,11 +29,6 @@
                     <label for="icon_telephone">Telephone</label>
                   </div>
                   <div class="input-field col s12">
-                    <i class="material-icons prefix">home</i>
-                    <input id="icon_address" type="tel" class="validate">
-                    <label for="icon_address">Address</label>
-                  </div>
-                  <div class="input-field col s12">
                     <i class="material-icons prefix">email</i>
                     <input id="email" type="email" class="validate">
                     <label for="email" data-error="wrong" data-success="right">Email</label>
@@ -45,7 +40,7 @@
                   </div>
                   <p style="text-align: center">
                       <!-- <a href="#" class="btn btn-flat white modal-close">Cancel</a> -->
-                      <a href="#" class="waves-effect waves" type="submit" name="action">Submit</a>
+                      <a href="profile" class="waves-effect waves" type="submit" name="action">Submit</a>
                   </p>
                 </div>
               </form>
@@ -83,42 +78,16 @@
                   </div>
                   <p style="text-align: center">
                       <!-- <a href="#" class="btn btn-flat white modal-close">Cancel</a> -->
-                      <a href="#" class="waves-effect waves" type="submit" name="action">Submit</a>
+                      <a href="/profile" class="waves-effect waves" type="submit" name="action">Submit</a>
                   </p>
                 </div>
               </form>
             </div>
         </div>
-        <div id="test3" class="col s12">Purchases
-        </div>
+        <!-- <div id="test3" class="col s12">Test 4</div> -->
         <!-- <div id="test4" class="col s12">Test 4</div> -->
       </div>
 
-    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <!-- <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
 
 </div>
-<!-- <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-        <div class="well">
-          <% if(user.local.name) { %>
-            <h3>Locally Stored User</h3>
-
-            <p>
-                <strong>Name</strong>: <%= user.local.name %><br>
-                <strong>id</strong>: <%= user._id %><br>
-                <strong>email</strong>: <%= user.local.email %><br>
-                <strong>password</strong>: <%= user.local.password %>
-            </p>
-          <% }else{ %>
-            <h3>Facebook User</h3>
-
-            <p>
-                <strong>Name</strong>: <%= user.facebook.name %><br>
-                <strong>id</strong>: <%= user.facebook.id %><br>
-                <strong>email</strong>: <%= user.facebook.email %><br>
-                <strong>token</strong>: <%= user.facebook.token %>
-            </p>
-            <% } %>
-        </div>
-    </div>
-</div> -->

@@ -11,7 +11,7 @@ var userSchema = new Schema({
     email: String,
     password: String,
     phone: String,
-    credit: {
+    creditCard: {
       number: Number,
       expDate: Date,
       creditName: String,
@@ -25,7 +25,7 @@ var userSchema = new Schema({
     token: String,
     email: String,
     phone: Number,
-    credit: {
+    creditCard: {
       number: Number,
       expDate: Date,
       creditName: String,
