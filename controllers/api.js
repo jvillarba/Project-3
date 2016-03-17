@@ -14,7 +14,7 @@ module.exports = {
 
 //show api
   show: function(req,res){ //for home page
-    
+
     var catArray = []
     for (var i = 0; i < 4; i++) {
       catArray[i] = "http://api.walmartlabs.com/v1/paginated/items?format=json&category="+ catList[mathRan()]+"&apiKey="+process.env.WALMART_API_KEY
@@ -39,7 +39,7 @@ module.exports = {
         var randoItem = []
         var randoTwenyFive = []
         for (var i = 0; i < body.items.length; i++) {
-          if (body.items[i].salePrice <= 100){
+          if (body.items[i].salePrice <= body.data){
             randoTwenyFive.push(body.items[i])
           }
             randoItem = randoTwenyFive[mathRan2()]

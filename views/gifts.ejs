@@ -97,7 +97,7 @@ h5{
   $( "#checkout" ).hide(); //hide checkout button
 
 
-
+  var moneySetter = 25;
   var $spin = $('#spin')
 
     $spin.on('click',function() {
@@ -105,7 +105,8 @@ h5{
 
       $.ajax({
         url: "/api",
-        method: 'GET'
+        method: 'GET',
+        data: moneySetter
       }).done(function(data) {
           $( ".progress" ).hide(); //hide load bar
           $( "#checkout" ).show(); //show checkout button
@@ -133,6 +134,7 @@ h5{
         product2: productIDs[1],
         product3: productIDs[2],
         product4: productIDs[3],
+        totalPrice: moneySetter
       }
       if (user) {
         $.ajax({
