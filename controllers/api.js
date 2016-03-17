@@ -27,7 +27,7 @@ module.exports = {
       var randoItem = []
       var randoTwenyFive = []
       for (var i = 0; i < body.items.length; i++) {
-        if (body.items[i].salePrice <= 20){  //body.data is the moneySetter var from gifts view
+        if (body.items[i].salePrice <= 60){  //body.data is the moneySetter var from gifts view
           randoTwenyFive.push(body.items[i])
         }
           randoItem = randoTwenyFive[mathRan2()]
