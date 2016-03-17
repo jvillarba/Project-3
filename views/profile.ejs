@@ -16,28 +16,24 @@
         <div id="profile" class="col s12" style="text-align: left">
             <!-- <h3>Profile</h3> -->
             <div class="row">
-                <div class="col s6">
-                    <h6 class="mdi-action-account-box">Name</h6>
-                    <p><%= user.local.name || user.facebook.name %></p>
+                <div class="col s6 card-panel grey lighten-5 z-depth-1" style="float: left">
+                    <p class="mdi-action-account-box">Name: <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
                 </div>
-                <div class="col s6">
-                    <h6 class="mdi-hardware-phone-android">Phone Number</h6>
-                    <p>+91 9912776151</p>
+                <div class="col s6 card-panel grey lighten-5 z-depth-1">
+                    <p class="mdi-hardware-phone-android">Phone Number: <span style="font-weight: bold">+91 9912776151</span></p>
                 </div>
-                <div class="col s12 profile">
-                    <h6 class="mdi-action-home">Address</h6>
-                    <p>1234 Street, Santa Monica, CA 90401</p>
+                <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                    <p class="mdi-action-home">Address: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
                 </div>
-                <div class="col s12">
-                    <h6 class="mdi-content-mail">Email</h6>
-                    <p><%= user.local.email || user.facebook.email %></p>
+                <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                    <p class="mdi-content-mail">Email: <span style="font-weight: bold"><%= user.local.email || user.facebook.email %></span></p>
                 </div>
-                <div class="col s12">
-                  <h6 class="mdi-action-lock">Password</h6>
-                  <p><%= user.local.password || user.facebook.token %></p>
+                <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                  <p class="mdi-action-lock">Password: <span style="font-weight: bold"><%= user.local.password || user.facebook.token %></span></p>
                 </div>
 
             </div>
+            <!-- <div class="divider"></div> -->
             <p style="text-align: center">
                 <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
             </p>
@@ -45,30 +41,26 @@
         <div id="billing" class="col s12" style="text-align: left">
           <!-- <h3>Billing</h3> -->
             <div class="row">
-                <div class="col s6">
-                    <h6 class="mdi-action-credit-card">Credit Card Number</h6>
-                    <p>1234 1234 1234 1234</p>
+                <div class="col s6 card-panel grey lighten-5 z-depth-1">
+                    <p class="mdi-action-credit-card">Credit Card Number: <span style="font-weight: bold">1234 1234 1234 1234</span></p>
                 </div>
-                <div class="col s4">
-                    <h6>Exp. Date (MM/YY)</h6>
-                    <p>MM/YY</p>
+                <div class="col s4 card-panel grey lighten-5 z-depth-1">
+                    <p>Exp. Date (MM/YY): <span style="font-weight: bold">MM/YY</span></p>
                 </div>
-                <div class="col s2">
-                    <h6>CVV</h6>
-                    <p>1234</p>
+                <div class="col s2 card-panel grey lighten-5 z-depth-1">
+                    <p>CVV: <span style="font-weight: bold">1234</span></p>
                 </div>
-                <div class="col s12">
-                    <h6 class="mdi-action-account-box">Name</h6>
-                    <p><%= user.local.name || user.facebook.name %></p>
+                <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                    <p class="mdi-action-account-box">Name: <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
                 </div>
-                <div class="col s12 profile">
-                    <h6 class="mdi-action-home">Address</h6>
-                    <p>1234 Street, Santa Monica, CA 90401</p>
+                <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                    <p class="mdi-action-home">Address: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
                 </div>
+                <!-- <div class="divider"></div> -->
+                <p style="text-align: center">
+                    <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
+                </p>
             </div>
-            <p style="text-align: center">
-                <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
-            </p>
         </div>
     </div>
 </div>
