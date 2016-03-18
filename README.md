@@ -1,4 +1,4 @@
-![Image](/public/images/logo.png)
+![Image](http://mlewislogic.com/wp-content/uploads/2011/05/ga.png)
 # GIFT:gift:BOT
 ## WDI_SM_21 Project Three
 
@@ -14,18 +14,18 @@ Nathan Castor |	nathancastor@gmail.com |	@ncastor |	nathan-castor
 
 **ROLES:**
 
-  Scrum Master: **Joe** [User model, Authentication, Login, Profile, GitHub, Heroku]
+  **Scrum Master:** *Joe* [User model, Profile, GitHub, Heroku]
 
-  API Lead: **Dan** [Product model, API]
+  **API Lead:** *Dan* [Product model, API]
 
-  Front-end(CSS/AJAX): **Nate** [Main Server.js, Routes & Controllers, CSS & Views, AJAX]
+  **Front-end(CSS/AJAX):** *Nate* [Main app.js, Routes & Controllers, CSS & Views, AJAX, Authentication, Login/out]
 ![Image](/public/images/roles.jpg)
 
 **Instructions**
 
 1. Start shopping on home page
 2. Select random or specific gift
-3. Option to signup/login - local/FB
+3. Signup/login thru local/FB in order to
 4. Complete profile
 5. Confirm purchase
 
@@ -33,12 +33,12 @@ Nathan Castor |	nathancastor@gmail.com |	@ncastor |	nathan-castor
 #### User Stories:
 As a consumer, I want to be able to purchase a gift online and have it delivered without a lot of fuss.
 
-As a shopper, I want to be able to purchase a gift and be surprised by what I receive.
+As a shopper, I want to be able to make a purchase to surprise someone with what they receive.
 
 
 #### Future Implementation:
 - Ability to select purchase price
-- Any items with a (?) question mark
+- Implement Stripe
 
 
 #### Technologies:
@@ -47,14 +47,14 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 - [x] Javascript
 - [x] jQuery
 - [x] Materialize
-- [ ] AJAX?
-- [ ] Stripe?
+- [x] AJAX
+
 
 #### Credits:
 ![Image](https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png)Heroku
 ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
 ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
- ![Image](http://www6.pcmag.com/media/images/300400-walmart-logo.jpg?thumb=y) Walmart API
+![Image](http://www6.pcmag.com/media/images/300400-walmart-logo.jpg?thumb=y) Walmart API
 
 
 #### Framework:
