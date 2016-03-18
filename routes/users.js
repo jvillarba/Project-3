@@ -80,7 +80,7 @@ userRouter.get('/auth/facebook/callback', passport.authenticate('facebook',{
 
 function isLoggedIn(req,res,next) {
   if (req.isAuthenticated()) return next()
-  res.redirect('/login')
+  res.redirect('/')  // res.redirect('login')
 }
 
 module.exports = userRouter

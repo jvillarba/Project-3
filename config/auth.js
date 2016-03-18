@@ -1,4 +1,8 @@
-require('dotenv').config();
+try{
+	require('dotenv').config();
+} catch(ex){
+	handleErr(ex);
+}
 
 module.exports = {
   'facebook': {
