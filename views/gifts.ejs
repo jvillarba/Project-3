@@ -148,7 +148,7 @@ h5{
         productIDs[i-1] = data[i-1].itemId
         images[i-1] = data[i-1].mediumImage
       }
-      savedTotalPrice = ('$'+(Math.ceil(totalPrice))
+      savedTotalPrice = Math.ceil(totalPrice)
       $('#total-price').text('$'+(Math.ceil(totalPrice)))
     });
   })

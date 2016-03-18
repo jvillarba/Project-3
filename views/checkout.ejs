@@ -139,7 +139,7 @@
     $('#p'+i).text(sessionStorage.getItem('product'+i))
   }
 
-  $('#totPrice').text(sessionStorage.getItem('savedTotalPrice'))
+  $('#totPrice').text('$'+sessionStorage.getItem('savedTotalPrice'))
   var $confirm = $('#confirmBtn')
   var $checkoutForm = $('#checkoutForm')
 
