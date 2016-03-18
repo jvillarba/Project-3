@@ -2,7 +2,7 @@
 # GIFT:gift:BOT
 ## WDI_SM_21 Project Three
 
-> *Our website is your online destination to make shopping fun and easy with an element of surprise*
+> *Gift Bot is an online destination to make shopping fun and easy with an element of surprise. Uilizing Walmart's fantastic API, we are able to randomize a bundle of 4 gifts based on pre-set price parameters*
 
 **TEAM MEMBERS:**
 
@@ -54,9 +54,15 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 ![Image](https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png)Heroku
 ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
 ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
-Walmart API
+ ![Image](http://www6.pcmag.com/media/images/300400-walmart-logo.jpg?thumb=y) Walmart API
+
 
 #### Framework:
 These photos are a draft of the homepage and completion views.
 ![Image](/public/images/overall_frame.jpg)
 ![Image](/public/images/TY_model.jpg)
+
+#### Phase 2:
+- Use price buttons so users can choose their own price parameters.
+
+
