@@ -48,6 +48,8 @@ As a shopper, I want to be able to make a purchase to surprise someone with what
 - [x] jQuery
 - [x] Materialize
 - [x] AJAX
+- [x] gitHub
+- [x] Heroku
 - [x] mLab
 
 
