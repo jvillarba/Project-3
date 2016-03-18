@@ -89,8 +89,6 @@ h5{
   <span id="total-price"></span>
 </div>
 
-
-
   <div>
     <button id="checkout" type="button" class="btn  red accent-4">Checkout</button>
   </div>
@@ -100,7 +98,6 @@ h5{
 
 
 <script type="text/javascript">
-
   var user = user
   $( ".progress" ).hide(); //hide load bar
   $( "#checkout" ).hide(); //hide checkout button
@@ -115,8 +112,8 @@ h5{
 
   // Get saved data from sessionStorage
   for (var i = 0; i < 4; i++) {
-    productIDs[i] = sessionStorage.getItem('product'+i+1);
-    images[i] = sessionStorage.getItem('image'+i+1);
+    productIDs[i] = sessionStorage.getItem('product'+i);
+    images[i] = sessionStorage.getItem('image'+i);
   }
 
   if (productIDs[0]) {
@@ -145,7 +142,7 @@ h5{
       $( "#total-price" ).show(); //hide checkout button
       $("#bundle").text("BUY BUNDLE NOW");
 
-      console.log(user);
+      //console.log(user);
       if (!user) {
         $( "#checkout" ).text('log in to checkout'); //show checkout button
         $( "#checkout" ).show(); //show checkout button
@@ -164,7 +161,7 @@ h5{
         productIDs[i-1] = data[i-1].itemId
         images[i-1] = data[i-1].mediumImage
       }
-      savedTotalPrice = totalPrice
+      savedTotalPrice = Math.ceil(totalPrice)
       $('#total-price').text('$'+(Math.ceil(totalPrice)))
     });
   })
@@ -188,11 +185,15 @@ h5{
       });
     }else {
       for (var i = 0; i < 4; i++) {
-        sessionStorage.setItem('product'+i+1, productIDs[i]);
-        sessionStorage.setItem('image'+i+1, images[i]);
+        sessionStorage.setItem('product'+i, productIDs[i]);
+        sessionStorage.setItem('image'+i, images[i]);
       }
       sessionStorage.setItem('savedTotalPrice',savedTotalPrice)
       window.location = '/login'
     }
   })
+
+  console.log('this is from session storage', sessionStorage.getItem('image1'));
+  console.log('this is from productIDs', productIDs[0]);
+
 </script>
