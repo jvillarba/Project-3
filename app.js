@@ -1,11 +1,7 @@
-try{
-	require('dotenv').config();
-} catch (ex){
-	handleErr(ex);
-}
 var
 	express				 = require('express'),
 	app 					 = express(),
+	dotenv 				 = require('dotenv').config({silent: true}),
 	ejs 					 = require('ejs'),
 	ejsLayouts 		 = require('express-ejs-layouts'),
 	mongoose 			 = require('mongoose'),
