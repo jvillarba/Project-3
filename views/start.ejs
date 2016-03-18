@@ -47,12 +47,29 @@
     .grey-box{
       background-color: #fff;
       opacity: 0.5;
-      width: 200px;
+      width: 100% inherit;
       height: 200px;
-      margin-top: 65px;
+      margin-top: 45px;
       font-size: 25px;
       font-family: 'Martel Sans', sans-serif;
       color: black;
+
+    }
+
+    @media only screen and (max-width: 1040px){
+      .grey-box{
+        font-size: 22px;
+    }
+
+    @media only screen and (max-width: 800px){
+      .grey-box{
+        font-size: 14px;
+    }
+
+    @media only screen and (max-width: 480px){
+      .grey-box{
+        font-size: 14px;
+    }
 
     }
 
