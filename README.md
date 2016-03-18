@@ -2,7 +2,7 @@
 # GIFT:gift:BOT
 ## WDI_SM_21 Project Three
 
-> *Gift Bot is an online destination to make shopping fun and easy with an element of surpris. Uilizing Walmart's fantastic API, we are able to randomize a bundle of 4 gifts based on pre-set price parameters*
+> *Gift Bot is an online destination to make shopping fun and easy with an element of surprise. Uilizing Walmart's fantastic API, we are able to randomize a bundle of 4 gifts based on pre-set price parameters*
 
 **TEAM MEMBERS:**
 
