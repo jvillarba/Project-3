@@ -14,18 +14,18 @@ Nathan Castor |	nathancastor@gmail.com |	@ncastor |	nathan-castor
 
 **ROLES:**
 
-  **Scrum Master:** *Joe* [User model, Profile, GitHub, Heroku]
+  **Scrum Master:** *Joe*
 
-  **API Lead:** *Dan* [Product model, API]
+  **API Lead:** *Dan*
 
-  **Front-end(CSS/AJAX):** *Nate* [Main app.js, Routes & Controllers, CSS & Views, AJAX, Authentication, Login/out]
+  **Front-end(CSS/AJAX):** *Nate* 
 ![Image](/public/images/roles.jpg)
 
 **Instructions**
 
-1. Start shopping on home page
-2. Select random or specific gift
-3. Signup/login thru local/FB in order to
+1. Click on orange button to go to shopping page
+2. Click spin to randomize four products
+3. Signup/login thru local/FB in order to:
 4. Complete profile
 5. Confirm purchase
 
@@ -48,6 +48,7 @@ As a shopper, I want to be able to make a purchase to surprise someone with what
 - [x] jQuery
 - [x] Materialize
 - [x] AJAX
+- [x] mLab
 
 
 #### Credits:
