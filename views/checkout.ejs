@@ -13,12 +13,12 @@
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="icon_prefix" name="name" type="text" class="validate">
-                  <label for="icon_prefix">Name</label>
+                  <label id="userName" for="icon_prefix"><%= user.facebook.name || user.local.name %></label>
                 </div>
                 <div class="input-field col s5">
-                  <i class="material-icons prefix">phone</i>
+                  <i class="material-icons prefix">Phone</i>
                   <input id="icon_telephone" name="phone" type="tel" class="validate" length="10">
-                  <label for="icon_telephone">Telephone</label>
+                  <label for="icon_telephone"><%= user.facebook.phone || user.local.phone %></label>
                 </div>
                 <!-- <div class="input-field col s11">
                   <i class="material-icons prefix">home</i>
@@ -28,7 +28,7 @@
                 <div class="input-field col s11">
                   <i class="material-icons prefix">email</i>
                   <input id="email" name="email" type="email" class="validate">
-                  <label for="email" data-error="wrong" data-success="right">Email</label>
+                  <label for="email" data-error="wrong" data-success="right"><%= user.facebook.email || user.local.email %></label>
                 </div>
               </div>
               <p style="text-align: center">
@@ -90,7 +90,7 @@
                 <div class="input-field col s11">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="icon_prefix" name="creditName" type="text" class="validate">
-                  <label for="icon_prefix">Name</label>
+                  <label for="icon_prefix">Name: </label>
                 </div>
                 <div class="input-field col s11">
                   <i class="material-icons prefix">home</i>
@@ -120,10 +120,10 @@
           </div>
           <p style="text-align: center">
               <a href="/gifts" class="btn btn-flat white">Cancel</a>&nbsp;
-              <button id="confirmBtn" class="waves-effect waves-light btn" type="submit" name="action">Submit
+              <%# <button id="confirmBtn" class="waves-effect waves-light btn" type="submit" name="action">Submit
                 <i class ="material-icons right">send</i>
-              </button>
-              <%# <input id="confirmBtn" value="CONFIRM PURCHASE" class="waves-effect waves-light btn" type="submit" name="action">%>
+              </button>%>
+              <input id="confirmBtn" value="CONFIRM PURCHASE" class="waves-effect waves-light btn" type="submit" name="action">
           </p>
 
         </li>
@@ -134,46 +134,74 @@
 
 <script type="text/javascript">
 
-  //console.log("this is session storage", sessionStorage.getItem('product1'));
-  for (var i = 0; i < 4; i++) {
-    $('#p'+i).text(sessionStorage.getItem('product'+i))
-  }
-
-  $('#totPrice').text('$'+sessionStorage.getItem('savedTotalPrice'))
   var $confirm = $('#confirmBtn')
   var $checkoutForm = $('#checkoutForm')
 
+  //console.log("this is session storage", sessionStorage.getItem('product1'));
+  // SET THE VALUE OF THE ITEM IDS
+  for (var i = 0; i < 4; i++) {
+    $('#p'+i).text(sessionStorage.getItem('product'+i))
+  }
+  // SET THE TOTAL PRICE VALUE
+  $('#totPrice').text('$'+sessionStorage.getItem('savedTotalPrice'))
+
+
   $checkoutForm.submit(function(evt) {
-    evt.preventDefault()
-    for (var i = 0; i < 4; i++) {
-      sessionStorage.removeItem('product'+i);
-      sessionStorage.removeItem('image'+i);
-    }
-    sessionStorage.removeItem('savedTotalPrice');
+    evt.preventDefault() // prevent a page refresh
 
-    //var data_array = $checkoutForm.serialize();
-    var order = {}
+    // GRAB THE VALUES FROM THE FORM
+    var data = {}
     $('#checkoutForm input').each(function(i, el){
-      order[$(el).attr('name')] = $(el).val()
+      data[$(el).attr('name')] = $(el).val()
     })
 
-    console.log(order);
-    // var checkoutInfo = []
-    // checkoutInfo[0] =
-    // var order = {
-    //   shippingAddress: variable,
-    //   shipToName: variable,
-    //   shipPhone: variable,
-    //   message: variable
-    // }
+    //console.log(order);
+
+    // SET THE VALUES FOR THE DATABASE
+    var orderDB = {
+      product1: sessionStorage.getItem('product0'),
+      product2: sessionStorage.getItem('product1'),
+      product3: sessionStorage.getItem('product2'),
+      product4: sessionStorage.getItem('product3'),
+      totalPrice: sessionStorage.removeItem('savedTotalPrice'),
+      shippingAddress: data['shippingAddress'],
+      shipToName: data['shipToName'],
+      shipPhone: data['shipPhone'],
+      message: data['message']
+    }
+    var userDB = {
+      phone: data['phone'],
+      creditCard: {
+        number: data['number'],
+        expDate: data['expDate'],
+        creditName: data['creditName'],
+        cvv: data['cvv'],
+        address: data['address']
+      }
+    }
     $.ajax({
-      // url: "/orders/"+ order._id, // need a way to find this
-      // method: 'PUT',
-      // data: order
-    }).done(function() {
-      // flash message here.
-      //window.location = '/gifts'
-    })
-  })
+      url: "/users/"+ user._id,
+      method: 'PATCH',
+      data: userDB
+    }).done(function(data) {
+      console.log("finished user PATCH");
+      $.ajax({
+        url: "/orders/"+ user._id,
+        method: 'POST',
+        data: orderDB
+      }).done(function(data) {
+        console.log("finished order POST");
+        // REMOVE THE SESSION STORAGE
+        for (var i = 0; i < 4; i++) {
+          sessionStorage.removeItem('product'+i);
+          sessionStorage.removeItem('image'+i);
+        }
+        sessionStorage.removeItem('savedTotalPrice');
+        //window.location = '/gifts'
+        // FLASH message
+      });
+    });
+
+  })//end of the click/submit function
 
 </script>

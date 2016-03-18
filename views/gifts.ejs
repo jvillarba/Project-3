@@ -164,9 +164,9 @@ h5{
     }
     if (user) {
       $.ajax({
-        url: "/orders/"+ user._id,
-        method: 'POST',
-        data: order
+        // url: "/orders/"+ user._id,
+        // method: 'POST',
+        // data: order
       }).done(function(data) {
         window.location = '/checkout'
       });
