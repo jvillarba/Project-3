@@ -18,7 +18,12 @@
                 <div class="input-field col s5">
                   <i class="material-icons prefix">Phone</i>
                   <input id="icon_telephone" name="phone" type="tel" class="validate" length="10">
-                  <label for="icon_telephone"><%= user.facebook.phone || user.local.phone %></label>
+                  <label for="icon_telephone">
+                    <% if(user.facebook.phone || user.local.phone){ %>
+                      <%= user.facebook.phone || user.local.phone %></label>
+                    <%}else{%>
+                      Telephone
+                    <%}%>
                 </div>
                 <!-- <div class="input-field col s11">
                   <i class="material-icons prefix">home</i>
@@ -119,7 +124,7 @@
               </div>
           </div>
           <p style="text-align: center">
-              <a href="/gifts" class="btn btn-flat white">Cancel</a>&nbsp;
+              <a id="cancelB" href="/gifts" class="btn btn-flat white">Cancel</a>&nbsp;
               <%# <button id="confirmBtn" class="waves-effect waves-light btn" type="submit" name="action">Submit
                 <i class ="material-icons right">send</i>
               </button>%>
@@ -198,10 +203,22 @@
         }
         sessionStorage.removeItem('savedTotalPrice');
         Materialize.toast("PURCHASE CONFIRMED!",4000)
+        // $('#cancelB').hide()
+        // $('#confirmBtn').hide()
+        setTimeout(function(){
+          window.location = '/gifts'
+        }, 4000);
+
         //window.location = '/gifts'
       });
     });
 
   })//end of the click/submit function
+
+  // $('#cancelB').on('click',function(evt) {
+  //   evt.preventDefault()
+  //   console.log("cancel Button CLICKED!");
+  //   console.log(<%-JSON.stringify(user)%>);
+  // })
 
 </script>
