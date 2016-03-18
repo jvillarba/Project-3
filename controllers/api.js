@@ -1,8 +1,4 @@
-try{
-	require('dotenv').config();
-} catch(ex){
-	handleErr(ex);
-}
+var dotenv = require('dotenv').config({silent: true})
 
 var Path = require('path');
 var request = require('request');
