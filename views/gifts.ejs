@@ -187,10 +187,15 @@ p{
     }
     if (user) {
       $.ajax({
-        url: "/orders/"+ user._id,
-        method: 'POST',
-        data: order
+        // url: "/orders/"+ user._id,
+        // method: 'POST',
+        // data: order
       }).done(function(data) {
+        for (var i = 0; i < 4; i++) {
+          sessionStorage.setItem('product'+i, productIDs[i]);
+          sessionStorage.setItem('image'+i, images[i]);
+        }
+        sessionStorage.setItem('savedTotalPrice',savedTotalPrice)
         window.location = '/checkout'
       });
     }else {

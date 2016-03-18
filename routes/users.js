@@ -4,7 +4,8 @@ var
   express    = require('express'),
   passport   = require('passport'),
   userRouter = express.Router(),
-  userCtrl   = require('../controllers/users.js')
+  userCtrl   = require('../controllers/users.js')//,
+  //giftsView  = require('')
 
 userRouter.route('/users')
   .get(userCtrl.index)
