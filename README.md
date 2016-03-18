@@ -54,7 +54,8 @@ As a shopper, I want to be able to purchase a gift and be surprised by what I re
 ![Image](https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png)Heroku
 ![Image](https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg)Facebook OAuth
 ![Image](https://upload.wikimedia.org/wikipedia/en/3/3e/Trello_Logo.png)Trello [link](https://trello.com/b/qqCaEBEb)
-Walmart API
+Walmart API ![Image](http://www6.pcmag.com/media/images/300400-walmart-logo.jpg?thumb=y)
+
 
 #### Framework:
 These photos are a draft of the homepage and completion views.
