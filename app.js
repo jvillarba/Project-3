@@ -1,6 +1,6 @@
 try{
 	require('dotenv').config();
-} catch(ex){
+} catch (ex){
 	handleErr(ex);
 }
 var
