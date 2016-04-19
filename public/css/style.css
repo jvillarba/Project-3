@@ -12,6 +12,10 @@
 }
 
 
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .progress{
   background-color: black;
 }
