@@ -20,11 +20,11 @@
                     <p class="mdi-action-account-box">NAME: <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
                 </div>
                 <div class="col s6 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-hardware-phone-android">PHONE NUMBER: <span style="font-weight: bold">+91 9912776151</span></p>
+                    <p class="mdi-hardware-phone-android">PHONE NUMBER: <span style="font-weight: bold"><%= user.local.phone %></span></p>
                 </div>
-                <div class="col s12 card-panel grey lighten-5 z-depth-1">
+                <!-- <div class="col s12 card-panel grey lighten-5 z-depth-1">
                     <p class="mdi-action-home">ADDRESS: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
-                </div>
+                </div> -->
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
                     <p class="mdi-content-mail">EMAIL: <span style="font-weight: bold"><%= user.local.email || user.facebook.email %></span></p>
                 </div>
@@ -42,7 +42,7 @@
           <!-- <h3>Billing</h3> -->
             <div class="row">
                 <div class="col s6 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-credit-card">CREDIT CARD NUMBER: <span style="font-weight: bold">1234 1234 1234 1234</span></p>
+                    <p class="mdi-action-credit-card">CREDIT CARD NUMBER: <span style="font-weight: bold"><%= user.local.number || user.facebook.number %></span></p>
                 </div>
                 <div class="col s4 card-panel grey lighten-5 z-depth-1">
                     <p>EXP. DATE (MM/YY): <span style="font-weight: bold">MM/YY</span></p>

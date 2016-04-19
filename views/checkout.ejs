@@ -5,15 +5,15 @@
     <ul class="collapsible" data-collapsible="expandable">
 
         <li>
-          <%# <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">account_circle</i>CUSTOMER INFORMATION</div>%>
+          <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">account_circle</i>CUSTOMER INFORMATION</div>
 
 
             <%# <div class="collapsible-body">%>
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" name="name" type="text" class="validate">
-                  <label id="userName" for="icon_prefix"><%= user.facebook.name || user.local.name %></label>
+                  <input id="icon_prefix" name="name" value="<%= user.facebook.name || user.local.name %>"  type="text" class="validate">
+                  <label id="userName" for="icon_prefix"></label>
                 </div>
                 <div class="input-field col s5">
                   <i class="material-icons prefix">Phone</i>
@@ -32,8 +32,8 @@
                 </div> -->
                 <div class="input-field col s11">
                   <i class="material-icons prefix">email</i>
-                  <input id="email" name="email" type="email" class="validate">
-                  <label for="email" data-error="wrong" data-success="right"><%= user.facebook.email || user.local.email %></label>
+                  <input id="email" name="email" value="<%= user.facebook.email || user.local.email %>" type="email" class="validate">
+                  <label for="email" data-error="wrong" data-success="right"></label>
                 </div>
               </div>
               <p style="text-align: center">
@@ -48,7 +48,7 @@
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" name="shipToName" type="text" class="validate">
+                  <input id="icon_prefix" name="shipToName" value="<%= user.facebook.name || user.local.name %>"  type="text" class="validate">
                   <label for="icon_prefix">Name</label>
                 </div>
                 <div class="input-field col s5">
@@ -67,9 +67,9 @@
                   <label for="icon_message" data-error="wrong" data-success="right">Personal Message</label>
                 </div>
               </div>
-              <p style="text-align: center">
+              <!-- <p style="text-align: center">
                   <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
-              </p>
+              </p> -->
 
           </div>
         </li>
@@ -79,27 +79,27 @@
               <div class="row">
                 <div class="input-field col s5">
                   <i class="material-icons prefix">credit_card</i>
-                  <input id="icon_prefix" name="number" type="text" class="validate" length="10">
+                  <input id="icon_prefix" name="number" type="number" value="<%# user.creditCard.number %>" class="validate" length="16">
                   <label for="icon_prefix">Card Number</label>
                 </div>
                 <div class="input-field col s4">
                   <i class="material-icons prefix">date</i>
-                  <input id="icon_exp" name="expDate" type="tel" class="validate">
+                  <input id="icon_exp" name="expDate" value="<%# user.creditCard.expDate %>" type="tel" class="validate">
                   <label for="icon_exp">Expiration</label>
                 </div>
                 <div class="input-field col s2">
                   <i class="material-icons prefix">cvv</i>
-                  <input id="icon_telephone" name="cvv" type="tel" class="validate">
-                  <label for="icon_telephone">CVV</label>
+                  <input id="icon_cvv" name="cvv" value="<%# user.creditCard.cvv %>" type="tel" class="validate">
+                  <label for="icon_cvv">CVV</label>
                 </div>
                 <div class="input-field col s11">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" name="creditName" type="text" class="validate">
+                  <input id="icon_prefix" name="creditName" value="<%= user.facebook.name || user.local.name %>" type="text" class="validate">
                   <label for="icon_prefix">Name: </label>
                 </div>
                 <div class="input-field col s11">
                   <i class="material-icons prefix">home</i>
-                  <input id="icon_address" name="address" type="tel" class="validate">
+                  <input id="icon_address" name="address" value="<%# user.creditCard.address %>" type="text" class="validate">
                   <label for="icon_address">Address</label>
                 </div>
               </div>
