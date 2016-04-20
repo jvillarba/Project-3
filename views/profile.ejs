@@ -1,6 +1,6 @@
 <div class="page-header">
 
-    <h3><%= user.local.name || user.facebook.name %>'s GiftBot Account</h3>
+    <h3><%= user.local.name || user.facebook.name %>'s <strong>GIFTBot</strong> Account</h3>
 
     <div class="row">
         <div class="col s12">
@@ -14,17 +14,13 @@
           </ul>
         </div>
         <div id="profile" class="col s12" style="text-align: left">
-            <!-- <h3>Profile</h3> -->
             <div class="row">
-                <div class="col s6 card-panel grey lighten-5 z-depth-1" style="float: left">
+                <div class="col s6 card-panel grey lighten-5 z-depth-1">
                     <p class="mdi-action-account-box">NAME: <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
                 </div>
                 <div class="col s6 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-hardware-phone-android">PHONE NUMBER: <span style="font-weight: bold"><%= user.local.phone %></span></p>
+                    <p class="mdi-hardware-phone-android">PHONE: <span style="font-weight: bold"><%= user.local.phone || user.facebook.phone %></span></p>
                 </div>
-                <!-- <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-home">ADDRESS: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
-                </div> -->
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
                     <p class="mdi-content-mail">EMAIL: <span style="font-weight: bold"><%= user.local.email || user.facebook.email %></span></p>
                 </div>
@@ -35,47 +31,47 @@
             </div>
             <!-- <div class="divider"></div> -->
             <p style="text-align: center">
-                <a href="/profileEdit" class="waves-effect waves" type="submit" name="action">Edit</a>
+                <a href="/profileEdit" class="waves-effect waves-light btn blue" type="submit" name="action">Edit</a>
             </p>
         </div>
         <div id="billing" class="col s12" style="text-align: left">
-          <!-- <h3>Billing</h3> -->
             <div class="row">
                 <div class="col s6 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-credit-card">CREDIT CARD NUMBER: <span style="font-weight: bold"><%= user.local.number || user.facebook.number %></span></p>
+                    <p class="mdi-action-credit-card">CREDIT CARD NUMBER: <span style="font-weight: bold"><%= user.local.creditCard.number || user.facebook.creditCard.number %></span></p>
                 </div>
                 <div class="col s4 card-panel grey lighten-5 z-depth-1">
                     <p>EXP. DATE (MM/YY): <span style="font-weight: bold">MM/YY</span></p>
                 </div>
                 <div class="col s2 card-panel grey lighten-5 z-depth-1">
-                    <p>CVV: <span style="font-weight: bold">1234</span></p>
+                    <p>CVV: <span style="font-weight: bold"><%= user.local.creditCard.cvv || user.facebook.creditCard.cvv %></span></p>
                 </div>
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-account-box">NAME (on card): <span style="font-weight: bold"><%= user.local.name || user.facebook.name %></span></p>
+                    <p class="mdi-action-account-box">NAME (on card): <span style="font-weight: bold"><%= user.local.creditCard.creditName || user.facebook.creditCard.creditName %></span></p>
                 </div>
                 <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                    <p class="mdi-action-home">ADDRESS: <span style="font-weight: bold">1234 Street, Santa Monica, CA 90401</span></p>
+                    <p class="mdi-action-home">ADDRESS: <span style="font-weight: bold"><%= user.local.creditCard.address || user.facebook.creditCard.address %></span></p>
                 </div>
                 <!-- <div class="divider"></div> -->
                 <p style="text-align: center">
-                    <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
+                    <a href="/profileEdit" class="waves-effect waves-light btn blue" type="submit" name="action">Edit</a>
                 </p>
             </div>
         </div>
         <div id="purchase" class="col s12" style="text-align: left">
           <!-- <h3>Billing</h3> -->
             <div class="col s12 card-panel grey lighten-5 z-depth-1">
-                <p class="mdi-action-shopping-cart">ORDER HISTORY: <span style="font-weight: bold">TBD</span>
+                <p class="mdi-action-shopping-cart">ORDER: <span style="font-weight: bold"></span>
                   <form class="col s12">
                     <div class="row">
                         <br>
-                        <div class="col s6">Order Total: <span style="font-weight: bold">order.totalPrice</span></div>
-                        <div class="col s6">Order Date: <span style="font-weight: bold">TBD</span></div>
+                        <div class="col s4">Order Total: <span style="font-weight: bold"> <%= user.local.orders || user.facebook.orders %></span></div>
+                        <div class="col s4">Order Total: <span style="font-weight: bold">order.totalPrice</span></div>
+                        <div class="col s4">Order Date: <span style="font-weight: bold">TBD</span></div>
                         <br>
-                        <div class="col s3">Item number: <span style="font-weight: bold"> order.product1</span></div>
-                        <div class="col s3">Item number: <span style="font-weight: bold"> order.product2</span></div>
-                        <div class="col s3">Item number: <span style="font-weight: bold"> order.product3</span></div>
-                        <div class="col s3">Item number: <span style="font-weight: bold"> order.product4</span></div>
+                        <div class="col s3">Item number: <span style="font-weight: bold"> <%= user.orders.product1 %></span></div>
+                        <div class="col s3">Item number: <span style="font-weight: bold"> <%= user.orders.product2 %></span></div>
+                        <div class="col s3">Item number: <span style="font-weight: bold"> <%= user.orders.product3 %></span></div>
+                        <div class="col s3">Item number: <span style="font-weight: bold"> <%= user.orders.product4 %></span></div>
 
                     </div>
                   </form>
