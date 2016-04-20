@@ -3,9 +3,9 @@
 .progress{
   background-color: #ffcc80
 }
-h2{
+/*h2{
   font-family: 'Candal', sans-serif;
-}
+}*/
 h5{
   font-family: 'Martel Sans', sans-serif;
 }
@@ -16,26 +16,25 @@ h5{
   font-size: 46px;
   width: 50%;
 }
-#bundle{
+/*#bundle{
   font-family: 'Martel Sans', sans-serif;
-  /*font-size: 14px;*/
+  font-size: 14px;
   font-weight: bold;
-  /*margin-top: 0 auto;*/
-}
+  margin-top: 0 auto;
+}*/
 
 
 /*p{
   font-size: 12px;
 }*/
 
-.row{
+/*.row{
   margin-bottom: 30px;
-}
+}*/
 
 </style>
 
-
-<h2 id="start" class="text-center">Start Gift Bot</h2>
+<h2 id="start" class="text-center"></h2>
 <h5>Find the perfectly random gift bundle</h5>
 
 <!-- load bar -->
@@ -45,64 +44,51 @@ h5{
     </div>
 </div>
 
-<div class="row" style="height:300px">
-
-  <div class="row center-align">
-    <div>
-      <button id="spin" type="button" class="btn orange darken-2">CLICK TO SPIN</button>
-    </div>
-    <!-- <br> -->
+<div class="center-align">
+  <div>
+    <button id="spin" type="button" class="btn orange darken-2">spin now</button><br><br>
   </div>
+</div>
+
+<div class="row" style="min-height:250px">
+  <div class="panel-body text-center">
 
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-1" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135"/>
+        <img id="box-1" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="150" weight="145"/>
         <p id="name-1"></p>
-      </div>
     </div>
   </div>
 
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-2" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135" />
+        <img id="box-2" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="150" weight="145"/>
         <p id="name-2"></p>
-      </div>
     </div>
   </div>
 
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-3" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135"/>
+        <img id="box-3" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="150" weight="145"/>
         <p id="name-3"></p>
-      </div>
     </div>
   </div>
 
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
-      <div class="panel-body text-center">
-        <img id="box-4" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135"/>
+        <img id="box-4" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="150" weight="145"/>
         <p id="name-4"></p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row center-align" style="height:100px">
-  <div id="bundle">SPIN TO FIND BUNDLE </div>
+<div class="row center-align" style="height:200px">
+  <div id="bundle"><h5>Click SPIN for bundle</h5></div>
 
   <span id="total-price"></span><br>
     <button id="checkout" type="button" class="btn green accent-4"></button>
 </div>
-
-
-
-
-
-
 
 <script type="text/javascript">
   var user = user
@@ -124,7 +110,7 @@ h5{
   }
 
   if (productIDs[0]) {
-    $("#bundle").text("BUY BUNDLE NOW");
+    $("#bundle").text("TOTAL COST FOR GIFTS");
     $( "#total-price" ).show();
     $( "#checkout" ).text('CHECKOUT');
     $( "#checkout" ).show(); //show checkout button

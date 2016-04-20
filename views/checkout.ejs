@@ -3,111 +3,93 @@
     <h3>Checkout</h3>
     <form class="col s11" id="checkoutForm" action="" method="">
     <ul class="collapsible" data-collapsible="expandable">
-
         <li>
-          <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">account_circle</i>CUSTOMER INFORMATION</div>
-
-
-            <%# <div class="collapsible-body">%>
-              <div class="row">
-                <div class="input-field col s6">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" name="name" value="<%= user.facebook.name || user.local.name %>"  type="text" class="validate">
-                  <label id="userName" for="icon_prefix"></label>
+            <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">account_circle</i>CUSTOMER INFORMATION</div>
+            <div class="collapsible-body">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_prefix" name="name" value="<%= user.facebook.name || user.local.name %>" type="text" class="validate">
+                        <label id="userName" for="icon_prefix">Name</label>
+                    </div>
+                    <div class="input-field col s5">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="icon_telephone" name="phone" value="<%= user.facebook.phone || user.local.phone %>" type="tel" class="validate">
+                        <label for="icon_telephone">Telephone</label>
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" name="email" value="<%= user.facebook.email || user.local.email %>" type="email" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                    <p style="text-align: center">
+                        <a href="/profileEdit" class="waves-effect waves-light btn blue" type="submit" name="action">Edit</a>
+                    </p>
                 </div>
-                <div class="input-field col s5">
-                  <i class="material-icons prefix">Phone</i>
-                  <input id="icon_telephone" name="phone" type="tel" class="validate" length="10">
-                  <label for="icon_telephone">
-                    <% if(user.facebook.phone || user.local.phone){ %>
-                      <%= user.facebook.phone || user.local.phone %></label>
-                    <%}else{%>
-                      Telephone
-                    <%}%>
-                </div>
-                <!-- <div class="input-field col s11">
-                  <i class="material-icons prefix">home</i>
-                  <input id="icon_address" type="text" class="validate">
-                  <label for="icon_address">Address</label>
-                </div> -->
-                <div class="input-field col s11">
-                  <i class="material-icons prefix">email</i>
-                  <input id="email" name="email" value="<%= user.facebook.email || user.local.email %>" type="email" class="validate">
-                  <label for="email" data-error="wrong" data-success="right"></label>
-                </div>
-              </div>
-              <p style="text-align: center">
-                  <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
-              </p>
-          <%# </div>%>
+            </div>
         </li>
 
         <li>
-          <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">home</i>SHIPPING INFORMATION</div>
-          <div class="collapsible-body">
-              <div class="row">
-                <div class="input-field col s6">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" name="shipToName" value="<%= user.facebook.name || user.local.name %>"  type="text" class="validate">
-                  <label for="icon_prefix">Name</label>
-                </div>
-                <div class="input-field col s5">
-                  <i class="material-icons prefix">phone</i>
-                  <input id="icon_telephone" name="shipPhone" type="tel" class="validate" length="10">
-                  <label for="icon_telephone">Telephone</label>
-                </div>
-                <div class="input-field col s11">
-                  <i class="material-icons prefix">home</i>
-                  <input id="icon_address" name="shippingAddress" type="text" class="validate">
-                  <label for="icon_address">Address</label>
-                </div>
-                <div class="input-field col s11">
-                  <i class="mdi-editor-mode-edit prefix"></i>
-                  <input id="icon_message" name="message" type="text" class="validate" length="140">
-                  <label for="icon_message" data-error="wrong" data-success="right">Personal Message</label>
-                </div>
-              </div>
-              <!-- <p style="text-align: center">
-                  <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
-              </p> -->
-
-          </div>
+            <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">home</i>SHIPPING INFORMATION</div>
+            <div class="collapsible-body">
+                <div class="row">
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="icon_prefix" name="shipToName" type="text" class="validate">
+                      <label for="icon_prefix">Name</label>
+                    </div>
+                    <div class="input-field col s5">
+                      <i class="material-icons prefix">phone</i>
+                      <input id="icon_telephone" name="shipPhone" type="tel" class="validate" length="12">
+                      <label for="icon_telephone">Telephone</label>
+                    </div>
+                    <div class="input-field col s11">
+                      <i class="material-icons prefix">home</i>
+                      <input id="icon_address" name="shippingAddress" type="text" class="validate">
+                      <label for="icon_address">Address</label>
+                    </div>
+                    <div class="input-field col s11">
+                      <i class="mdi-editor-mode-edit prefix"></i>
+                      <input id="icon_message" name="message" type="text" class="validate" length="140">
+                      <label for="icon_message" data-error="wrong" data-success="right">Personal Message</label>
+                    </div>
+                  </div>
+            </div>
         </li>
         <li>
-          <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">credit_card</i>BILLING INFORMATION</div>
-          <div class="collapsible-body">
-              <div class="row">
-                <div class="input-field col s5">
-                  <i class="material-icons prefix">credit_card</i>
-                  <input id="icon_prefix" name="number" type="number" value="<%# user.creditCard.number %>" class="validate" length="16">
-                  <label for="icon_prefix">Card Number</label>
+            <div class="collapsible-header left-align orange darken-2 active"><i class="material-icons">credit_card</i>BILLING INFORMATION</div>
+            <div class="collapsible-body">
+                <div class="row">
+                    <div class="input-field col s5">
+                      <i class="material-icons prefix">credit_card</i>
+                      <input id="icon_prefix" name="number" type="number" value="<%= user.local.creditCard.number || user.facebook.creditCard.number %>" class="validate" length="16">
+                      <label for="icon_prefix">Card Number</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <i class="material-icons prefix">date</i>
+                      <input id="icon_exp" name="expDate" value="<%# user.creditCard.expDate %>" type="tel" class="validate">
+                      <label for="icon_exp">Expiration</label>
+                    </div>
+                    <div class="input-field col s2">
+                      <i class="material-icons prefix">cvv</i>
+                      <input id="icon_cvv" name="cvv" value="<%= user.local.creditCard.cvv || user.facebook.creditCard.cvv %>" type="tel" class="validate">
+                      <label for="icon_cvv">CVV</label>
+                    </div>
+                    <div class="input-field col s11">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="icon_prefix" name="creditName" value="<%= user.local.name || user.facebook.name %>" type="text" class="validate">
+                      <label for="icon_prefix">Name</label>
+                    </div>
+                    <div class="input-field col s11">
+                      <i class="material-icons prefix">home</i>
+                      <input id="icon_address" name="address" value="<%= user.local.creditCard.address || user.facebook.creditCard.address %>" type="text" class="validate">
+                      <label for="icon_address">Address</label>
+                    </div>
                 </div>
-                <div class="input-field col s4">
-                  <i class="material-icons prefix">date</i>
-                  <input id="icon_exp" name="expDate" value="<%# user.creditCard.expDate %>" type="tel" class="validate">
-                  <label for="icon_exp">Expiration</label>
-                </div>
-                <div class="input-field col s2">
-                  <i class="material-icons prefix">cvv</i>
-                  <input id="icon_cvv" name="cvv" value="<%# user.creditCard.cvv %>" type="tel" class="validate">
-                  <label for="icon_cvv">CVV</label>
-                </div>
-                <div class="input-field col s11">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" name="creditName" value="<%= user.facebook.name || user.local.name %>" type="text" class="validate">
-                  <label for="icon_prefix">Name: </label>
-                </div>
-                <div class="input-field col s11">
-                  <i class="material-icons prefix">home</i>
-                  <input id="icon_address" name="address" value="<%# user.creditCard.address %>" type="text" class="validate">
-                  <label for="icon_address">Address</label>
-                </div>
-              </div>
-              <p style="text-align: center">
-                  <a href="#" class="waves-effect waves" type="submit" name="action">Edit</a>
-              </p>
-
-          </div>
+                <p style="text-align: center">
+                    <a href="/profileEdit" class="waves-effect waves-light btn blue" type="submit" name="action">Edit</a>
+                </p>
+            </div>
         </li>
         <li>
           <div class="collapsible-header left-align orange darken-2 active"><i class="mdi-action-shopping-cart"></i>ITEMS TO PURCHASE</div>
@@ -123,18 +105,16 @@
 
               </div>
           </div>
+        </li>
           <p style="text-align: center">
-              <a id="cancelB" href="/gifts" class="btn btn-flat white">Cancel</a>&nbsp;
-              <%# <button id="confirmBtn" class="waves-effect waves-light btn" type="submit" name="action">Submit
+              <a id="cancelB" href="/gifts" class="waves-effect waves-light yellow darken-2 btn">Cancel</a>&nbsp;
+              <!-- <button id="confirmBtn" class="waves-effect waves-light btn" type="submit" name="action">Submit
                 <i class ="material-icons right">send</i>
-              </button>%>
+              </button>%> -->
               <input id="confirmBtn" value="CONFIRM PURCHASE" class="waves-effect waves-light btn" type="submit" name="action">
           </p>
-
-        </li>
-
-    </ul>
-    </form><br><br><br><br>
+    </ul><br>
+    </form><br><br><br>
 </div>
 
 <script type="text/javascript">

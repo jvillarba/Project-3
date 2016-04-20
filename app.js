@@ -17,7 +17,7 @@ var
 	orderRoutes 	 = require('./routes/orders.js'),
 	path 					 = require('path'),
 	request				 = require('request'),
-	bodyParser     = require('body-parser');
+	bodyParser     = require('body-parser')
 
 
 app.use("/public", express.static(path.join(__dirname, 'public')))
