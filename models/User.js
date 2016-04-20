@@ -24,7 +24,7 @@ var userSchema = new Schema({
     name: String,
     token: String,
     email: String,
-    phone: Number,
+    phone: String,
     creditCard: {
       number: Number,
       expDate: Date,

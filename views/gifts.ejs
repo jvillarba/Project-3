@@ -18,26 +18,24 @@ h5{
 }
 #bundle{
   font-family: 'Martel Sans', sans-serif;
-  font-size: 14;
+  /*font-size: 14px;*/
   font-weight: bold;
-  margin-top: 45px;
+  /*margin-top: 0 auto;*/
 }
 
 
-p{
+/*p{
   font-size: 12px;
-}
+}*/
 
 .row{
   margin-bottom: 30px;
 }
 
-
-
 </style>
 
 
-<h2 class="text-center">Start Gift Bot</h2>
+<h2 id="start" class="text-center">Start Gift Bot</h2>
 <h5>Find the perfectly random gift bundle</h5>
 
 <!-- load bar -->
@@ -47,20 +45,19 @@ p{
     </div>
 </div>
 
-<div class="row" style="height:350px">
+<div class="row" style="height:300px">
 
   <div class="row center-align">
-
     <div>
-      <button id="spin" type="button" class="btn-large  orange darken-1">SPIN!</button>
+      <button id="spin" type="button" class="btn orange darken-2">CLICK TO SPIN</button>
     </div>
-    <br>
+    <!-- <br> -->
   </div>
 
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-1" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135" width="135" />
+        <img id="box-1" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135"/>
         <p id="name-1"></p>
       </div>
     </div>
@@ -69,7 +66,7 @@ p{
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-2" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135" width="135" />
+        <img id="box-2" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135" />
         <p id="name-2"></p>
       </div>
     </div>
@@ -78,7 +75,7 @@ p{
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-3" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135" width="135" />
+        <img id="box-3" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135"/>
         <p id="name-3"></p>
       </div>
     </div>
@@ -87,18 +84,18 @@ p{
   <div class="col s12 m6 l3">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <img id="box-4" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135" width="135" />
+        <img id="box-4" src="https://gemplerscoupons.files.wordpress.com/2015/05/mystery-gift.jpg" alt="" height="135"/>
         <p id="name-4"></p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row center-align" style="height:270px">
+<div class="row center-align" style="height:100px">
   <div id="bundle">SPIN TO FIND BUNDLE </div>
 
   <span id="total-price"></span><br>
-    <button id="checkout" type="button" class="btn  green accent-4">Checkout</button>
+    <button id="checkout" type="button" class="btn green accent-4"></button>
 </div>
 
 

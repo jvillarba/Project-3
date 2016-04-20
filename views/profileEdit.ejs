@@ -1,6 +1,6 @@
 <div class="page-header">
 
-    <h3><%= user.local.name || user.facebook.name %>'s GiftBot Account</h3>
+    <h3><%= user.local.name || user.facebook.name %>'s <strong>GIFTBot</strong> Account</h3>
 
     <div class="row">
         <div class="col s12">
@@ -10,79 +10,73 @@
             <li class="tab col s2 disabled"><a href="#test4"></a></li>
             <li class="tab col s2 disabled"><a href="#test4"></a></li>
             <li class="tab col s2 disabled"><a href="#test5"></a></li>
-            <li class="tab col s2 disabled"><a href="#test6"></a></li>
+            <!-- <li class="tab col s2 disabled"><a href="#test6"></a></li> -->
           </ul>
         </div>
         <div id="test1" class="col s12">
-            <!-- <h3>Profile</h3> -->
-          <div class="row">
-              <form class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input disabled="" id="icon_prefix" type="text" value="<%= user.local.name%>" class="validate">
+                    <input id="icon_prefix" name="creditName" value="<%= user.facebook.name || user.local.name %>" type="text" class="validate">
                     <label for="icon_prefix">Name</label>
                   </div>
                   <div class="input-field col s6">
                     <i class="material-icons prefix">phone</i>
-                    <input id="icon_telephone" type="tel" class="validate">
+                    <input id="icon_telephone" value="<%= user.facebook.phone || user.local.phone %>" type="tel" class="validate">
                     <label for="icon_telephone">Telephone</label>
                   </div>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">email</i>
-                    <input id="email" type="email" class="validate">
+                    <input id="email" name="email" value="<%= user.facebook.email || user.local.email %>" type="email" class="validate">
                     <label for="email" data-error="wrong" data-success="right">Email</label>
                   </div>
-                  <div class="input-field col s12">
+                  <!-- <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
                     <input id="password" type="password" class="validate">
                     <label for="password">Password</label>
-                  </div>
-                  <p style="text-align: center">
-                      <!-- <a href="#" class="btn btn-flat white modal-close">Cancel</a> -->
-                      <a href="profile" class="waves-effect waves" type="submit" name="action">Submit</a>
-                  </p>
+                  </div> -->
                 </div>
+                <p style="text-align: center">
+                    <a href="profile" class="waves-effect waves-light btn" type="submit" name="action">Update</a>&nbsp;
+                    <a href="profile" class="waves-effect waves-light yellow darken-2 btn">Cancel</a>&nbsp;
+                    <a href="profile" class="waves-effect waves-light red btn">Disable</a>
+                </p>
               </form>
-            </div>
           </div>
         <div id="test2" class="col s12">
-          <!-- <h3>Billing</h3> -->
-          <div class="row">
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
                     <i class="material-icons prefix">credit_card</i>
-                    <input id="icon_prefix" type="text" class="validate">
+                    <input id="icon_prefix" name="number" type="number" value="<%= user.local.creditCard.number || user.facebook.creditCard.number %>" class="validate" length="16">
                     <label for="icon_prefix">Card Number</label>
                   </div>
                   <div class="input-field col s4">
                     <i class="material-icons prefix">date</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Expiration</label>
+                    <input id="icon_exp" name="expDate" value="<%# user.creditCard.expDate %>" class="validate">
+                    <label for="icon_exp">Expiration</label>
                   </div>
                   <div class="input-field col s2">
                     <i class="material-icons prefix">cvv</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">CVV</label>
+                    <input id="icon_cvv" name="cvv" value="<%= user.local.creditCard.cvv || user.facebook.creditCard.cvv %>" class="validate">
+                    <label for="icon_cvv">CVV</label>
                   </div>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
+                    <input id="icon_prefix" name="creditName" value="<%= user.local.creditCard.creditName || user.facebook.creditCard.creditName %>" type="text" class="validate">
                     <label for="icon_prefix">Name</label>
                   </div>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">home</i>
-                    <input id="icon_address" type="tel" class="validate">
+                    <input id="icon_address" name="address" value="<%= user.facebook.creditCard.address || user.local.creditCard.address %>" type="text" class="validate">
                     <label for="icon_address">Address</label>
                   </div>
-                  <p style="text-align: center">
-                      <!-- <a href="#" class="btn btn-flat white modal-close">Cancel</a> -->
-                      <a href="/profile" class="waves-effect waves" type="submit" name="action">Submit</a>
-                  </p>
                 </div>
+                <p style="text-align: center">
+                    <a href="profile" class="waves-effect waves-light btn" type="submit" name="action">Update</a>&nbsp;
+                    <a href="profile" class="waves-effect waves-light yellow darken-2 btn">Cancel</a>&nbsp;
+                </p>
               </form>
-            </div>
         </div>
         <!-- <div id="test3" class="col s12">Test 4</div> -->
         <!-- <div id="test4" class="col s12">Test 4</div> -->
